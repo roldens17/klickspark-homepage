@@ -30,6 +30,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -83,8 +84,11 @@ h1, h2, h3 { font-weight: 600; }
   color: #868D97;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 14px;
 }
+
+.kicker .accent { white-space: nowrap; }
 
 .hero__kicker.kicker { letter-spacing: 0.14em; }
 
@@ -234,6 +238,7 @@ h1, h2, h3 { font-weight: 600; }
    ============================================================ */
 .hero {
   padding: 96px 32px 56px;
+  overflow: hidden;
 }
 
 .hero__blob {
@@ -876,5 +881,9 @@ h1, h2, h3 { font-weight: 600; }
   .hero__cta,
   .contact__cta {
     flex-direction: column;
+  }
+  /* Hide the hairline separator in the hero kicker — too wide at 375px */
+  .hero__kicker .kicker-line {
+    display: none;
   }
 }
