@@ -258,6 +258,8 @@ ul, ol { padding: 0; list-style: none; }
 .theme-card__link::after { content: ''; position: absolute; inset: 0; }
 .theme-card__link:focus-visible { outline: none; }
 .theme-card:has(.theme-card__link:focus-visible) { outline: 3px solid var(--black); outline-offset: 4px; z-index: 1; }
+.theme-card__actions { position: relative; z-index: 1; margin-top: auto; padding-top: 8px; align-items: center; }
+.theme-card__actions .theme-card__cta { margin-top: 0; padding-top: 0; }
 .theme-card__cta { margin-top: auto; padding-top: 8px; font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; }
 .tag {
@@ -336,7 +338,7 @@ ul, ol { padding: 0; list-style: none; }
 .on-dark .buy .btn:hover { background: var(--white); color: var(--black); }
 .on-dark .buy .btn--outline { background: transparent; color: var(--black); }
 .on-dark .buy .btn--outline:hover { background: var(--black); color: var(--white); }
-.on-dark .buy .btn[aria-disabled="true"] { background: var(--g100); color: var(--g500); border-color: var(--g200); }
+.on-dark .buy .btn[aria-disabled="true"] { background: transparent; color: var(--g500); border: 1px solid var(--g200); }
 .on-dark .buy .muted { color: var(--g500); }
 .on-dark .buy :focus-visible { outline-color: var(--black); }
 .buy {
@@ -352,7 +354,11 @@ ul, ol { padding: 0; list-style: none; }
   display: flex; align-items: center; gap: 10px;
   margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--g200);
 }
-.buy__soon .dot { width: 8px; height: 8px; background: var(--black); border-radius: 50%; flex: none; }
+.buy__soon { color: var(--g500); }
+.buy__secure { text-align: center; margin-top: 10px; }
+.buy__stack--alt { grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0 24px; }
+.buy__stack--alt .btn { min-height: 38px; padding: 0 10px; font-size: 11px; }
+@media (max-width: 420px) { .buy__stack--alt { grid-template-columns: 1fr; } }
 .buy__or { text-align: center; color: var(--g500); margin: 6px 0; }
 .buy__list { margin-top: 22px; font-size: 15px; }
 .buy__list li { padding: 6px 0; display: flex; gap: 10px; }
