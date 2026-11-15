@@ -198,6 +198,7 @@ ul, ol { padding: 0; list-style: none; }
 
 /* ---------- Sections ---------- */
 .section { padding: var(--section) 0; }
+#themes { padding-top: clamp(40px, 5.5vw, 80px); }
 .section--dark { background: var(--black); color: var(--white); }
 .section--grey { background: var(--g100); }
 .section-head {
