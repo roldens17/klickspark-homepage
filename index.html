@@ -2,319 +2,251 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KlickSpark Media — Digital Product Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KlickSpark Studio — Premium Shopify Themes for Streetwear &amp; Fashion</title>
+  <meta name="description" content="KlickSpark Studio makes premium Shopify themes for streetwear and fashion brands. Meet U-Street: an Online Store 2.0 theme with 20 sections, 3 style presets and a drop countdown. $59, one-time.">
+  <link rel="canonical" href="https://klicksparkmedia.com/">
+  <meta name="theme-color" content="#000000">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="KlickSpark Studio">
+  <meta property="og:title" content="KlickSpark Studio — Premium Shopify Themes">
+  <meta property="og:description" content="Premium Shopify themes for streetwear and fashion brands. Meet U-Street.">
+  <meta property="og:url" content="https://klicksparkmedia.com/">
+  <meta property="og:image" content="https://klicksparkmedia.com/assets/ustreet/01b-hero-cover-notext.jpg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="The U-Street Shopify theme shown on laptop and phone screens">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Background grid -->
-  <div class="bg-grid" aria-hidden="true"></div>
-
-  <!-- ===================== NAV ===================== -->
-  <header class="nav">
-    <div class="container nav__inner">
-      <a href="#top" class="nav__logo">
-        <span class="logo-diamond" aria-hidden="true"></span>
-        <span class="logo-wordmark">KlickSpark<span class="logo-muted">Media</span></span>
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a href="index.html" class="brand" aria-label="KlickSpark Studio home">
+        <span class="brand__mark" aria-hidden="true">KS</span>
+        <span>KlickSpark <span class="brand__sub">Studio</span></span>
       </a>
-      <nav class="nav__links" aria-label="Primary">
-        <a href="#work" class="nav__link"><span class="accent">01</span> Work</a>
-        <a href="#services" class="nav__link"><span class="accent">02</span> Services</a>
-        <a href="#approach" class="nav__link"><span class="accent">03</span> Studio</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="site-nav__links">
+          <li><a href="#themes">Themes</a></li>
+          <li><a href="#custom">Custom builds</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+        <a href="u-street.html" class="btn btn--sm">View U-Street</a>
       </nav>
-      <div class="nav__right">
-        <span class="nav__status">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span class="availability-text">Available · 2 slots</span>
-        </span>
-        <a href="#contact" class="btn-ghost nav__cta">Start a project →</a>
-      </div>
     </div>
   </header>
 
-  <main>
+  <main id="main">
 
-    <!-- ===================== HERO ===================== -->
-    <section id="top" class="hero container">
-      <div class="hero__blob" aria-hidden="true"></div>
-
-      <div class="hero__grid">
-        <!-- Left column -->
-        <div class="hero__left">
-          <div class="kicker hero__kicker" data-reveal>
-            <span class="accent">[ studio ]</span>
-            <span class="kicker-line" aria-hidden="true"></span>
-            Shopify · SaaS · WordPress
-          </div>
-          <h1 class="hero__h1" data-reveal>
-            The storefronts,<br>dashboards &amp; sites<br>your business <span class="accent">runs&nbsp;on.</span>
-          </h1>
-          <p class="hero__lead" data-reveal>
-            KlickSpark Media is a digital product studio building commerce, software, and content systems with stronger structure, cleaner UX, and sharper execution.
-          </p>
-          <div class="hero__cta" data-reveal>
-            <a href="#work" class="btn-primary">View selected work →</a>
-            <a href="#contact" class="btn-ghost">Book a build slot</a>
-          </div>
+    <!-- ============ HERO ============ -->
+    <section class="hero on-dark" aria-labelledby="hero-title">
+      <div class="wrap">
+        <div class="hero__top">
+          <span class="label">KlickSpark Studio</span>
+          <span class="label muted">Premium Shopify themes</span>
         </div>
-
-        <!-- Right column — meta panel -->
-        <aside class="hero__meta" data-reveal>
-          <div class="meta-header">
-            <span>// currently</span>
-            <span>2026</span>
-          </div>
-          <div class="meta-body">
-            <div class="meta-row">
-              <span>Status</span>
-              <span class="accent availability-text">Available · 2 slots</span>
-            </div>
-            <div class="meta-row">
-              <span>Focus</span>
-              <span class="meta-value">Commerce / SaaS</span>
-            </div>
-            <div class="meta-row">
-              <span>Engaged</span>
-              <span class="meta-value">Remote · GMT+0</span>
-            </div>
-            <div class="meta-divider" aria-hidden="true"></div>
-            <p class="meta-note">Design → Build → Ship.<br>Fixed scope, fixed pace,<br>handed off clean.</p>
-          </div>
-        </aside>
-      </div>
-
-      <!-- Showreel placeholder -->
-      <div class="reel" data-reveal aria-label="Showreel placeholder">
-        <span class="reel__label reel__label--tl">STUDIO_REEL.mp4</span>
-        <span class="reel__label reel__label--tr">21 : 8</span>
-        <div class="reel__center">
-          <span class="reel__play" aria-hidden="true">▶</span>
-          <span class="reel__caption">// drop showreel or hero capture</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== MARQUEE ===================== -->
-    <section class="marquee" aria-label="Capabilities">
-      <div class="marquee__track" aria-hidden="true">
-        <div class="marquee__row">
-          <span>Shopify Plus</span><span class="accent">✦</span>
-          <span>Headless Commerce</span><span class="accent">✦</span>
-          <span>SaaS Dashboards</span><span class="accent">✦</span>
-          <span>Design Systems</span><span class="accent">✦</span>
-          <span>WordPress</span><span class="accent">✦</span>
-          <span>Conversion (CRO)</span><span class="accent">✦</span>
-          <span>Front-end Engineering</span><span class="accent">✦</span>
-          <span>Brand Systems</span><span class="accent">✦</span>
-        </div>
-        <div class="marquee__row" aria-hidden="true">
-          <span>Shopify Plus</span><span class="accent">✦</span>
-          <span>Headless Commerce</span><span class="accent">✦</span>
-          <span>SaaS Dashboards</span><span class="accent">✦</span>
-          <span>Design Systems</span><span class="accent">✦</span>
-          <span>WordPress</span><span class="accent">✦</span>
-          <span>Conversion (CRO)</span><span class="accent">✦</span>
-          <span>Front-end Engineering</span><span class="accent">✦</span>
-          <span>Brand Systems</span><span class="accent">✦</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== APPROACH ===================== -->
-    <section id="approach" class="approach container">
-      <div class="kicker" data-reveal>
-        <span class="accent">03 /</span> How the studio works
-      </div>
-      <div class="approach__grid">
-        <div class="approach__card" data-reveal>
-          <div class="approach__index accent">/01</div>
-          <h3 class="approach__title">Stronger structure</h3>
-          <p class="approach__body">Information architecture, data models, and component systems designed before a single screen is styled.</p>
-        </div>
-        <div class="approach__card" data-reveal>
-          <div class="approach__index accent">/02</div>
-          <h3 class="approach__title">Cleaner UX</h3>
-          <p class="approach__body">Interfaces that get out of the way — fewer steps, clear hierarchy, and flows tuned to how people actually buy and work.</p>
-        </div>
-        <div class="approach__card" data-reveal>
-          <div class="approach__index accent">/03</div>
-          <h3 class="approach__title">Sharper execution</h3>
-          <p class="approach__body">Production-grade front-end, performant by default, handed off clean — or shipped live by us, end to end.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== WORK ===================== -->
-    <section id="work" class="work container">
-      <div class="work__header" data-reveal>
-        <div>
-          <div class="kicker work__kicker"><span class="accent">01 /</span> Selected work</div>
-          <h2 class="section-h2">Recent builds</h2>
-        </div>
-        <span class="work__meta">04 projects · 2024 – 2026</span>
-      </div>
-
-      <div class="work__grid">
-        <a href="#contact" class="work-card" data-reveal>
-          <div class="work-card__cover" aria-label="Aether Supply project cover">
-            <span class="cover-label cover-label--tl">PRJ_01</span>
-            <span class="cover-label cover-label--tr">4 : 3</span>
-            <span class="cover-caption">// shopify storefront cover</span>
-          </div>
-          <div class="work-card__body">
-            <div class="work-card__row">
-              <h3 class="work-card__title">Aether Supply</h3>
-              <span class="work-card__year">2026</span>
-            </div>
-            <p class="work-card__summary">Headless Shopify storefront for a DTC essentials brand — rebuilt PDP, faster cart, cleaner checkout path.</p>
-            <div class="work-card__tags">Shopify Plus&nbsp;&nbsp;/&nbsp;&nbsp;Headless&nbsp;&nbsp;/&nbsp;&nbsp;CRO</div>
-          </div>
-        </a>
-
-        <a href="#contact" class="work-card" data-reveal>
-          <div class="work-card__cover" aria-label="Northwind project cover">
-            <span class="cover-label cover-label--tl">PRJ_02</span>
-            <span class="cover-label cover-label--tr">4 : 3</span>
-            <span class="cover-caption">// saas dashboard cover</span>
-          </div>
-          <div class="work-card__body">
-            <div class="work-card__row">
-              <h3 class="work-card__title">Northwind</h3>
-              <span class="work-card__year">2025</span>
-            </div>
-            <p class="work-card__summary">B2B analytics SaaS — a dense dashboard reorganised around the three jobs users actually log in to do.</p>
-            <div class="work-card__tags">SaaS UI&nbsp;&nbsp;/&nbsp;&nbsp;Design System&nbsp;&nbsp;/&nbsp;&nbsp;Front-end</div>
-          </div>
-        </a>
-
-        <a href="#contact" class="work-card" data-reveal>
-          <div class="work-card__cover" aria-label="Field & Folio project cover">
-            <span class="cover-label cover-label--tl">PRJ_03</span>
-            <span class="cover-label cover-label--tr">4 : 3</span>
-            <span class="cover-caption">// wordpress editorial cover</span>
-          </div>
-          <div class="work-card__body">
-            <div class="work-card__row">
-              <h3 class="work-card__title">Field &amp; Folio</h3>
-              <span class="work-card__year">2025</span>
-            </div>
-            <p class="work-card__summary">Editorial WordPress build for a publishing studio — custom blocks, fast loads, a CMS the team enjoys.</p>
-            <div class="work-card__tags">WordPress&nbsp;&nbsp;/&nbsp;&nbsp;Custom Blocks&nbsp;&nbsp;/&nbsp;&nbsp;Brand</div>
-          </div>
-        </a>
-
-        <a href="#contact" class="work-card" data-reveal>
-          <div class="work-card__cover" aria-label="Cadence project cover">
-            <span class="cover-label cover-label--tl">PRJ_04</span>
-            <span class="cover-label cover-label--tr">4 : 3</span>
-            <span class="cover-caption">// product marketing site cover</span>
-          </div>
-          <div class="work-card__body">
-            <div class="work-card__row">
-              <h3 class="work-card__title">Cadence</h3>
-              <span class="work-card__year">2024</span>
-            </div>
-            <p class="work-card__summary">Marketing site + design system for a scheduling product — one component library, every page on-brand.</p>
-            <div class="work-card__tags">Webflow&nbsp;&nbsp;/&nbsp;&nbsp;Design System&nbsp;&nbsp;/&nbsp;&nbsp;Motion</div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- ===================== SERVICES ===================== -->
-    <section id="services" class="services">
-      <div class="container services__inner">
-        <div class="services__header" data-reveal>
+        <h1 id="hero-title" class="display h-xl hero__title" data-reveal>
+          Themes built<br>for <span class="outline">the drop.</span>
+        </h1>
+        <div class="hero__body" data-reveal>
           <div>
-            <div class="kicker"><span class="accent">02 /</span> Capabilities</div>
-            <h2 class="section-h2">Three things, done properly</h2>
+            <p class="lead">Premium Shopify themes for streetwear and fashion brands. Our first release is <strong>U-Street</strong>: a mobile-first Online Store 2.0 theme for streetwear, clothing and sneaker stores.</p>
           </div>
-          <p class="services__subhead">Pick one or run the full stack — design, build, and ongoing iteration under one studio.</p>
+          <div>
+            <div class="btn-row">
+              <a href="https://klickspark.myshopify.com" class="btn" target="_blank" rel="noopener">Live demo <span class="arrow" aria-hidden="true">↗</span><span class="sr-only">(opens in a new tab)</span></a>
+              <a href="u-street.html" class="btn btn--outline">See the theme <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+            <p class="note muted">Demo store password: <strong>a</strong></p>
+          </div>
+        </div>
+      </div>
+      <div class="hero__media">
+        <span class="hero__tag label">Featured — U-Street</span>
+        <img src="assets/ustreet/01b-hero-cover-notext.jpg" width="1600" height="1200"
+             alt="The U-Street Shopify theme displayed on a laptop and two phones, showing a black streetwear storefront and the popup cart"
+             fetchpriority="high">
+      </div>
+    </section>
+
+    <!-- ============ THEMES ============ -->
+    <section class="section" id="themes" aria-labelledby="themes-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">01 — Themes</span>
+            <h2 id="themes-title" class="display h-lg">The collection</h2>
+          </div>
+          <p class="lead muted">Focused Shopify themes for brands that sell clothing, sneakers and limited drops. One-time price, no subscription.</p>
         </div>
 
-        <div class="services__list">
-          <div class="svc-row" data-reveal>
-            <div class="svc-row__code accent">S/01</div>
-            <div class="svc-row__content">
-              <h3 class="svc-row__title">Shopify &amp; Commerce</h3>
-              <p class="svc-row__desc">Storefronts that convert — themed or fully headless. We rebuild structure, speed, and the buying flow, not just the skin.</p>
+        <div class="theme-grid">
+          <article class="theme-card theme-card--feature">
+            <div class="theme-card__media">
+              <img src="assets/ustreet/03-homepage.jpg" width="1600" height="1200" loading="lazy"
+                   alt="U-Street theme homepage preview">
             </div>
-            <div class="svc-row__deliverables">
-              Theme &amp; headless builds<br>
-              Product &amp; collection UX<br>
-              Checkout / cart tuning<br>
-              Conversion (CRO)<br>
-              Migrations
+            <div class="theme-card__body">
+              <div class="theme-card__row">
+                <h3 class="display h-md"><a class="theme-card__link" href="u-street.html">U-Street</a></h3>
+                <span class="theme-card__price">$59</span>
+              </div>
+              <p class="muted">For streetwear, clothing and sneaker stores. 20 sections, 3 style presets and a drop countdown for launches.</p>
+              <ul class="tags" aria-label="Highlights">
+                <li class="tag">Online Store 2.0</li>
+                <li class="tag">20 sections</li>
+                <li class="tag">3 presets</li>
+                <li class="tag">Mobile-first</li>
+              </ul>
+              <span class="theme-card__cta" aria-hidden="true">View theme →</span>
             </div>
-          </div>
+          </article>
 
-          <div class="svc-row" data-reveal>
-            <div class="svc-row__code accent">S/02</div>
-            <div class="svc-row__content">
-              <h3 class="svc-row__title">SaaS &amp; Product UI</h3>
-              <p class="svc-row__desc">Interfaces for software — dashboards, onboarding, settings. Calmer, clearer, and backed by a real design system.</p>
+          <article class="theme-card">
+            <div class="placeholder placeholder--dark" aria-hidden="true">
+              <span class="placeholder__badge label">Coming soon</span>
+              <span class="display placeholder__word">Aura</span>
             </div>
-            <div class="svc-row__deliverables">
-              App &amp; dashboard UX<br>
-              Design systems<br>
-              Front-end engineering<br>
-              Design → dev handoff<br>
-              Iteration sprints
+            <div class="theme-card__body">
+              <div class="theme-card__row">
+                <h3 class="display h-sm">Aura</h3>
+                <span class="label">Coming soon</span>
+              </div>
+              <p class="muted">Our next theme is in the works. Details will be announced when it's ready.</p>
             </div>
-          </div>
+          </article>
 
-          <div class="svc-row" data-reveal>
-            <div class="svc-row__code accent">S/03</div>
-            <div class="svc-row__content">
-              <h3 class="svc-row__title">WordPress &amp; Content</h3>
-              <p class="svc-row__desc">Content systems the team can actually run. Custom blocks, sensible structure, and performance that holds up.</p>
+          <article class="theme-card">
+            <div class="placeholder placeholder--light" aria-hidden="true">
+              <span class="placeholder__plus">+</span>
             </div>
-            <div class="svc-row__deliverables">
-              Custom theme builds<br>
-              Gutenberg blocks<br>
-              CMS architecture<br>
-              Performance<br>
-              Maintenance
+            <div class="theme-card__body">
+              <div class="theme-card__row">
+                <h3 class="display h-sm">More themes coming</h3>
+              </div>
+              <p class="muted">Want to hear about new releases? Email us and we'll let you know.</p>
+              <a class="theme-card__cta" href="mailto:klicksparkstudio@gmail.com?subject=Notify%20me%20about%20new%20themes">Get notified →</a>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- ===================== CONTACT / CTA ===================== -->
-    <section id="contact" class="contact container">
-      <div class="contact__panel" data-reveal>
-        <div class="contact__blob" aria-hidden="true"></div>
-        <div class="contact__eyebrow">// <span class="availability-text">Available · 2 slots</span></div>
-        <h2 class="contact__h2">Have something to build? Let's scope it.</h2>
-        <p class="contact__body">Tell us about the storefront, product, or site. We'll come back within two working days with a route to ship it.</p>
-        <div class="contact__cta">
-          <a href="mailto:hello@klicksparkmedia.com" class="btn-primary">hello@klicksparkmedia.com →</a>
-          <a href="https://klicksparkmedia.com" class="btn-ghost" rel="noopener noreferrer">Book a call</a>
+    <!-- ============ WHY ============ -->
+    <section class="section section--dark on-dark" aria-labelledby="why-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="label">02 — Why our themes</span>
+            <h2 id="why-title" class="display h-lg">Made for<br>streetwear</h2>
+          </div>
+          <p class="lead muted">Everything below ships in U-Street today.</p>
+        </div>
+
+        <ul class="why-grid">
+          <li class="why-item" data-reveal>
+            <span class="why-item__num label">01</span>
+            <h3 class="display">Drop countdown</h3>
+            <p class="muted">A dedicated section to count down to your next product launch.</p>
+          </li>
+          <li class="why-item" data-reveal>
+            <span class="why-item__num label">02</span>
+            <h3 class="display">20 sections</h3>
+            <p class="muted">Build pages your way with Online Store 2.0 sections in the Shopify editor.</p>
+          </li>
+          <li class="why-item" data-reveal>
+            <span class="why-item__num label">03</span>
+            <h3 class="display">3 style presets</h3>
+            <p class="muted">Street Black, Concrete and Varsity. Pick one and launch.</p>
+          </li>
+          <li class="why-item" data-reveal>
+            <span class="why-item__num label">04</span>
+            <h3 class="display">Quick view</h3>
+            <p class="muted">Shoppers can preview products straight from the product card.</p>
+          </li>
+          <li class="why-item" data-reveal>
+            <span class="why-item__num label">05</span>
+            <h3 class="display">Popup cart</h3>
+            <p class="muted">A small popup confirms each add to bag without leaving the page.</p>
+          </li>
+          <li class="why-item" data-reveal>
+            <span class="why-item__num label">06</span>
+            <h3 class="display">Mobile-first</h3>
+            <p class="muted">Laid out for phones first, then scaled up to desktop.</p>
+          </li>
+        </ul>
+
+        <div class="btn-row" style="margin-top:56px">
+          <a href="u-street.html" class="btn">Explore U-Street <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CUSTOM BUILDS ============ -->
+    <section class="section" id="custom" aria-labelledby="custom-title">
+      <div class="wrap">
+        <div class="builds" data-reveal>
+          <div>
+            <span class="label">03 — Custom builds</span>
+            <h2 id="custom-title" class="display h-md" style="margin:20px 0 20px">Need something<br>made to measure?</h2>
+            <p class="muted">Beyond our themes, we take on a small number of custom Shopify projects for brands.</p>
+          </div>
+          <div>
+            <ul class="builds__list">
+              <li>Custom Shopify storefronts</li>
+              <li>Theme customization for your brand</li>
+            </ul>
+            <div class="btn-row" style="margin-top:28px">
+              <a href="mailto:klicksparkstudio@gmail.com?subject=Custom%20build%20inquiry" class="btn">Start an inquiry <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- ===================== FOOTER ===================== -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__logo">
-        <span class="logo-diamond logo-diamond--sm" aria-hidden="true"></span>
-        <span class="footer__wordmark">KlickSpark<span class="logo-muted">Media</span></span>
+  <footer class="site-footer on-dark" id="support">
+    <div class="wrap">
+      <p class="display site-footer__big" aria-hidden="true">KlickSpark</p>
+      <div class="site-footer__grid">
+        <div>
+          <h2 class="label">Support</h2>
+          <p>Questions about a theme or your download?</p>
+          <p><a href="mailto:klicksparkstudio@gmail.com">klicksparkstudio@gmail.com</a></p>
+        </div>
+        <div>
+          <h2 class="label">Themes</h2>
+          <ul>
+            <li><a href="u-street.html">U-Street</a></li>
+            <li><a href="https://klickspark.myshopify.com" target="_blank" rel="noopener">Live demo<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><span class="muted">Aura — coming soon</span></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="label">Studio</h2>
+          <ul>
+            <li><a href="#custom">Custom builds</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer__right">
-        <span>Shopify · SaaS · WordPress</span>
+      <div class="site-footer__base label">
         <span>© 2026 KlickSpark Media</span>
+        <span>KlickSpark Studio is a product of KlickSpark Media</span>
       </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </body>
 </html>
