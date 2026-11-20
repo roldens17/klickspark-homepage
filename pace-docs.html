@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PACE Theme Docs — KlickSpark Studio</title>
+  <meta name="description" content="Buyer guide for the PACE 1.0 Shopify theme: install, presets, mega menu, spec tags, size guide, drop countdown and the popup cart.">
+  <link rel="canonical" href="https://klicksparkmedia.com/pace-docs.html">
+  <meta name="theme-color" content="#000000">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="KlickSpark Studio">
+  <meta property="og:title" content="PACE Theme Docs — KlickSpark Studio">
+  <meta property="og:description" content="Buyer guide for the PACE 1.0 Shopify theme: install, presets, mega menu, spec tags and the popup cart.">
+  <meta property="og:url" content="https://klicksparkmedia.com/pace-docs.html">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Scoped typography and layout for the PACE docs page. Site header/footer stay on styles.css. */
+    .docs-hero { padding: clamp(48px, 7vw, 96px) 0 clamp(40px, 5vw, 72px); background: var(--black); color: var(--white); }
+    .docs-hero__crumbs { margin-bottom: 28px; color: var(--g400); }
+    .docs-hero__crumbs a { text-decoration: none; color: var(--white); }
+    .docs-hero__crumbs a:hover { text-decoration: underline; }
+    .docs-hero__kicker { color: #D4FF3A; margin-bottom: 18px; }
+    .docs-hero h1 { margin-bottom: 24px; max-width: 12ch; }
+    .docs-hero .lead { color: var(--g300); margin-bottom: 28px; }
+    .docs-hero__meta { display: flex; flex-wrap: wrap; gap: 8px 28px; margin: 0 0 32px; color: var(--g400); }
+    .docs-hero__meta a { color: var(--white); }
+    .docs-hero__actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+    .docs-hero a, .docs-hero__meta, .docs-hero__demo { overflow-wrap: anywhere; }
+    .docs-hero__demo { margin-top: 14px; max-width: 40em; }
+
+    .docs-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+      gap: clamp(32px, 5vw, 72px);
+      padding-top: clamp(40px, 6vw, 80px);
+      padding-bottom: clamp(80px, 10vw, 140px);
+      align-items: start;
+      min-width: 0;
+    }
+
+    .docs-toc {
+      position: sticky;
+      top: calc(var(--header-h) + 16px);
+      max-height: calc(100vh - var(--header-h) - 32px);
+      overflow: auto;
+      padding-right: 8px;
+    }
+    .docs-toc__title { margin-bottom: 16px; color: var(--g500); }
+    .docs-toc ol { list-style: none; padding: 0; margin: 0; }
+    .docs-toc li { margin: 0; }
+    .docs-toc a {
+      display: block;
+      text-decoration: none;
+      font-size: 14px;
+      line-height: 1.35;
+      padding: 8px 0 8px 14px;
+      border-left: 2px solid var(--g200);
+      color: var(--g500);
+    }
+    .docs-toc a:hover { color: var(--ink); }
+    .docs-toc a.is-active {
+      color: var(--ink);
+      border-left-color: var(--black);
+      font-weight: 600;
+    }
+    .docs-toc a.docs-toc__sub { padding-left: 26px; font-size: 13px; }
+    .docs-toc__mobile { display: none; }
+
+    .docs-body { min-width: 0; max-width: 46rem; }
+    .docs-body :where(p, ul, ol, table, pre, .docs-table-wrap) { margin: 0 0 1.1em; }
+    .docs-body :where(h2, h3) { scroll-margin-top: calc(var(--header-h) + 20px); }
+    @media (max-width: 900px) {
+      .docs-body :where(h2, h3) { scroll-margin-top: calc(var(--header-h) + 64px); }
+    }
+    .docs-section { padding: 8px 0 28px; border-top: 1px solid var(--g200); }
+    .docs-section:first-child { border-top: 0; padding-top: 0; }
+    .docs-kicker { color: var(--g500); margin: 28px 0 10px; }
+    .docs-body h2 {
+      font-family: var(--display);
+      font-weight: 800;
+      font-stretch: 80%;
+      font-variation-settings: 'wdth' 80;
+      text-transform: uppercase;
+      letter-spacing: -.01em;
+      font-size: clamp(28px, 3.4vw, 40px);
+      line-height: 0.95;
+      margin: 0 0 18px;
+    }
+    .docs-body h3 {
+      font-family: var(--display);
+      font-weight: 800;
+      font-stretch: 85%;
+      font-variation-settings: 'wdth' 85;
+      text-transform: uppercase;
+      letter-spacing: -.01em;
+      font-size: clamp(18px, 2vw, 22px);
+      line-height: 1.2;
+      margin: 1.6em 0 0.7em;
+    }
+    .docs-body p, .docs-body li { font-size: 17px; line-height: 1.65; }
+    .docs-body ul, .docs-body ol { padding-left: 1.3em; }
+    .docs-body ul { list-style: disc; }
+    .docs-body ol { list-style: decimal; }
+    .docs-body li { margin: 0 0 0.45em; padding: 0; }
+    .docs-body li::marker { color: var(--g500); }
+    .docs-body a {
+      color: var(--ink);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+    .docs-body a:hover { text-decoration-thickness: 2px; }
+    .docs-body code {
+      font-family: var(--mono);
+      font-size: 0.86em;
+      background: var(--g100);
+      border: 1px solid var(--g200);
+      padding: 0.1em 0.35em;
+      word-break: break-word;
+    }
+    .docs-body pre {
+      background: var(--ink);
+      color: var(--g100);
+      padding: 18px 20px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .docs-body pre code {
+      background: none;
+      border: 0;
+      padding: 0;
+      color: inherit;
+      font-size: 13px;
+      line-height: 1.55;
+      word-break: normal;
+      white-space: pre;
+    }
+    .docs-section, .docs-table-wrap { min-width: 0; }
+    .docs-table-wrap {
+      display: block;
+      max-width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid var(--g200);
+    }
+    .docs-body table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      line-height: 1.45;
+      margin: 0;
+    }
+    .docs-body th, .docs-body td {
+      text-align: left;
+      vertical-align: top;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--g200);
+      white-space: nowrap;
+    }
+    .docs-body td:last-child, .docs-body th:last-child { white-space: normal; }
+    .docs-body th {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: var(--g100);
+    }
+    .docs-body tr:last-child td { border-bottom: 0; }
+    .docs-end {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--g200);
+      color: var(--g500);
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .06em;
+    }
+
+    @media (max-width: 900px) {
+      .docs-layout { grid-template-columns: 1fr; gap: 0; padding-top: 0; }
+      .docs-toc {
+        position: sticky;
+        top: var(--header-h);
+        z-index: 90;
+        max-height: none;
+        overflow: visible;
+        padding: 0;
+        margin: 0 calc(-1 * var(--gutter));
+        background: rgba(255,255,255,.94);
+        -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--g200);
+      }
+      .docs-toc__desktop { display: none; }
+      .docs-toc__mobile { display: block; }
+      .docs-toc__mobile > summary {
+        list-style: none;
+        cursor: pointer;
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: .14em;
+        text-transform: uppercase;
+        padding: 14px var(--gutter);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .docs-toc__mobile > summary::-webkit-details-marker { display: none; }
+      .docs-toc__mobile > summary::after { content: '+'; font-size: 18px; line-height: 1; }
+      .docs-toc__mobile[open] > summary::after { content: '–'; }
+      .docs-toc__mobile ol { padding: 0 var(--gutter) 16px; max-height: min(60vh, 420px); overflow: auto; }
+      .docs-body { padding-top: 32px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a href="index.html" class="brand" aria-label="KlickSpark Studio home">
+        <span class="brand__mark" aria-hidden="true">KS</span>
+        <span>KlickSpark <span class="brand__sub">Studio</span></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary">
+        <ul class="site-nav__links">
+          <li><a href="index.html#themes">Themes</a></li>
+          <li><a href="index.html#custom">Custom builds</a></li>
+          <li><a href="#support">Support</a></li>
+        </ul>
+        <a href="/downloads/PACE-Docs-v1.0.pdf" class="btn btn--sm">Download PDF</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="docs-hero on-dark" aria-labelledby="docs-title">
+      <div class="wrap">
+        <p class="docs-hero__crumbs label"><a href="index.html#themes">Themes</a> / <a href="pace.html">PACE</a></p>
+        <p class="docs-hero__kicker label">PACE 1.0 buyer guide</p>
+        <h1 id="docs-title" class="display h-md">PACE Theme Docs</h1>
+        <p class="lead">A Shopify Online Store 2.0 theme for run, training and athleisure brands. This guide matches the settings you will see in the PACE 1.0 theme editor.</p>
+        <ul class="docs-hero__meta label">
+          <li>Version 1.0</li>
+          <li>Author KlickSpark</li>
+          <li>Support <a href="mailto:klicksparkstudio@gmail.com">klicksparkstudio@gmail.com</a></li>
+        </ul>
+        <div class="docs-hero__actions">
+          <a href="/downloads/PACE-Docs-v1.0.pdf" class="btn">Download PDF <span class="arrow" aria-hidden="true">↓</span></a>
+          <a href="mailto:klicksparkstudio@gmail.com" class="btn btn--outline">Email support</a>
+        </div>
+        <p class="note muted" style="margin-top:18px">We reply within 2 business days.</p>
+        <p class="note muted docs-hero__demo">Live demo: <a href="https://ustreet-theme-test.myshopify.com">https://ustreet-theme-test.myshopify.com</a> (password: 1234)</p>
+      </div>
+    </section>
+
+    <div class="wrap docs-layout">
+      <nav class="docs-toc" aria-label="On this page">
+        <div class="docs-toc__desktop">
+          <p class="docs-toc__title label">Contents</p>
+          <ol><li><a href="#1-whats-in-the-box">1. What’s in the box</a></li><li><a href="#2-install-from-the-zip">2. Install from the zip</a></li><li><a href="#3-choose-a-preset-volt-ember-or-glacier">3. Choose a preset: Volt, Ember or Glacier</a></li><li><a href="#4-theme-settings">4. Theme settings</a></li><li><a href="#5-homepage-sections">5. Homepage sections</a></li><li><a href="#6-mega-menu">6. Mega menu</a></li><li><a href="#7-spec-and-stat-tags">7. Spec and stat tags</a></li><li><a href="#8-shop-by-activity-tiles-and-collections">8. Shop by Activity tiles and collections</a></li><li><a href="#9-size-guide">9. Size guide</a></li><li><a href="#10-drop-countdown">10. Drop countdown</a></li><li><a href="#11-popup-cart-quick-view-and-search">11. Popup cart, Quick View and search</a></li><li><a href="#12-product-page">12. Product page</a></li><li><a href="#13-faq-page">13. FAQ page</a></li><li><a href="#14-footer-social-and-newsletter">14. Footer, social and newsletter</a></li><li><a href="#15-support-updates-and-license">15. Support, updates and license</a></li><li><a href="#16-troubleshooting">16. Troubleshooting</a></li><li><a href="#17-appendix-section-list">17. Appendix: section list</a></li></ol>
+        </div>
+        <details class="docs-toc__mobile">
+          <summary>Contents</summary>
+          <ol><li><a href="#1-whats-in-the-box">1. What’s in the box</a></li><li><a href="#2-install-from-the-zip">2. Install from the zip</a></li><li><a href="#3-choose-a-preset-volt-ember-or-glacier">3. Choose a preset: Volt, Ember or Glacier</a></li><li><a href="#4-theme-settings">4. Theme settings</a></li><li><a href="#5-homepage-sections">5. Homepage sections</a></li><li><a href="#6-mega-menu">6. Mega menu</a></li><li><a href="#7-spec-and-stat-tags">7. Spec and stat tags</a></li><li><a href="#8-shop-by-activity-tiles-and-collections">8. Shop by Activity tiles and collections</a></li><li><a href="#9-size-guide">9. Size guide</a></li><li><a href="#10-drop-countdown">10. Drop countdown</a></li><li><a href="#11-popup-cart-quick-view-and-search">11. Popup cart, Quick View and search</a></li><li><a href="#12-product-page">12. Product page</a></li><li><a href="#13-faq-page">13. FAQ page</a></li><li><a href="#14-footer-social-and-newsletter">14. Footer, social and newsletter</a></li><li><a href="#15-support-updates-and-license">15. Support, updates and license</a></li><li><a href="#16-troubleshooting">16. Troubleshooting</a></li><li><a href="#17-appendix-section-list">17. Appendix: section list</a></li></ol>
+        </details>
+      </nav>
+      <article class="docs-body">
+        <section class="docs-section" aria-labelledby="1-whats-in-the-box"><p class="docs-kicker label">01</p><h2 id="1-whats-in-the-box">What’s in the box</h2>
+<ul><li>PACE theme zip for <strong>Volt</strong> (the default, and the look in the listing hero), plus separate zips for <strong>Ember</strong> and <strong>Glacier</strong></li><li>This buyer guide (PDF)</li><li>Spec tag cheat sheet with copy-paste examples</li><li>Bonus AI photo pack: 25 original demo photos, plus 17 cool-grey retouches of the product and Studio tile shots (recommended if you use Volt). No stock photography.</li><li>Changelog and a single-store license</li></ul>
+<p>The theme zip does not include the demo store’s products, collections or uploaded images. After install, sections that need a product, collection or image show placeholders until you add your own.</p>
+<p>PACE works on any Shopify plan that supports Online Store 2.0. No apps are required for the features in this guide.</p>
+</section><section class="docs-section" aria-labelledby="2-install-from-the-zip"><p class="docs-kicker label">02</p><h2 id="2-install-from-the-zip">Install from the zip</h2>
+<ol><li>In your download, pick the zip for the preset you want (Volt, Ember or Glacier). Upload that zip rather than switching presets later; each zip is already set to its preset colours and fonts.</li><li>In Shopify, go to <strong>Online Store &gt; Themes</strong>.</li><li>Click <strong>Add theme</strong>, then <strong>Upload zip file</strong>, and select the zip.</li><li>When the theme appears in your library, click <strong>Preview</strong> and walk the home, collection, product, cart and search pages.</li><li>Click <strong>Customize</strong> to set your logo, menus, homepage collections and images (the steps below).</li><li>When it looks right, click <strong>Publish</strong>.</li></ol>
+<h3 id="after-you-upload">After you upload</h3>
+<ul><li><strong>Header &gt; Logo text</strong> is set to <code>PACE</code> in the shipped header. Replace it with your brand, or upload a <strong>Logo image</strong> and set <strong>Logo width desktop</strong> / <strong>Logo width mobile</strong>.</li><li><strong>Header &gt; Main menu</strong> defaults to the Shopify menu called <code>main-menu</code>. Point it at your own navigation, or edit that menu under <strong>Online Store &gt; Navigation</strong>.</li><li>Create your collections and products first, then hook them into <strong>PACE activity tiles</strong>, <strong>PACE product grid</strong>, <strong>PACE hero</strong> and <strong>PACE spec sheet</strong>.</li><li>Add your social URLs under <strong>Theme settings &gt; Social links</strong> so the footer Social block can show icons.</li></ul>
+<h3 id="if-you-are-replacing-another-theme">If you are replacing another theme</h3>
+<p>PACE will not import another theme’s section settings. Publish only after you have set your logo, menus and homepage. Keep the old theme unpublished until you have previewed checkout, policies and the password page (if your store is hidden).</p>
+</section><section class="docs-section" aria-labelledby="3-choose-a-preset-volt-ember-or-glacier"><p class="docs-kicker label">03</p><h2 id="3-choose-a-preset-volt-ember-or-glacier">Choose a preset: Volt, Ember or Glacier</h2>
+<p>Each zip installs looking like its demo. All three use <strong>Archivo Narrow</strong> for headings. Volt and Ember use <strong>Archivo</strong> for body text; Glacier uses <strong>Work Sans</strong>.</p>
+<div class="docs-table-wrap" tabindex="0"><table><thead><tr><th>Preset</th><th>Feel</th><th>Background</th><th>Text</th><th>Accent</th><th>Button</th><th>Button text</th><th>Footer background</th></tr></thead><tbody><tr><td><strong>Volt</strong> (default)</td><td>True black, lime pop</td><td><code>#0B0B0C</code></td><td><code>#F2F2EE</code></td><td><code>#D4FF3A</code></td><td><code>#D4FF3A</code></td><td><code>#0B0B0C</code></td><td><code>#050506</code></td></tr><tr><td><strong>Ember</strong></td><td>Bone and orange</td><td><code>#EDE8DF</code></td><td><code>#1A1714</code></td><td><code>#C2410C</code></td><td><code>#FF5A1F</code></td><td><code>#1A1714</code></td><td><code>#1A1714</code></td></tr><tr><td><strong>Glacier</strong></td><td>Ice blue</td><td><code>#EEF3F8</code></td><td><code>#0E1A2B</code></td><td><code>#1D4E89</code></td><td><code>#7DD3FC</code></td><td><code>#0E1A2B</code></td><td><code>#0E1A2B</code></td></tr></tbody></table></div><p>Volt also sets <strong>Announcement bar background</strong> <code>#1A1A1C</code> and <strong>Announcement bar text</strong> <code>#F2F2EE</code>. Ember and Glacier leave those two fields empty so the announcement bar follows the header colour scheme.</p>
+<h3 id="how-to-pick-one">How to pick one</h3>
+<ul><li><strong>Recommended:</strong> upload the zip named for that preset. Colours and fonts are already applied.</li><li><strong>Or</strong> use the theme’s built-in styles (Volt, Ember, Glacier) in the theme editor, then check <strong>Theme settings &gt; Colors</strong> and <strong>Typography</strong>.</li></ul>
+<p>If you switch from Volt to Ember or Glacier inside the editor, clear <strong>Announcement bar background</strong> and <strong>Announcement bar text</strong> under <strong>Theme settings &gt; Colors</strong> if the dark Volt bar is still showing. Those two Volt colours can stick after a style change. Uploading the Ember or Glacier zip avoids this.</p>
+<p>You can still edit any colour after install. Theme settings colours are listed in the next section.</p>
+</section><section class="docs-section" aria-labelledby="4-theme-settings"><p class="docs-kicker label">04</p><h2 id="4-theme-settings">Theme settings</h2>
+<p>Open the theme editor (<strong>Customize</strong>), then click the <strong>Theme settings</strong> gear.</p>
+<h3 id="brand">Brand</h3>
+<ul><li><strong>Favicon</strong> — square PNG, at least 32 × 32 px.</li></ul>
+<h3 id="typography">Typography</h3>
+<ul><li><strong>Use system fonts</strong> — off in all three presets, so the heading and body fonts below are used. Turn it on to use the device’s system UI fonts instead.</li><li><strong>Heading font</strong></li><li><strong>Body font</strong></li></ul>
+<h3 id="colors">Colors</h3>
+<ul><li><strong>Background</strong></li><li><strong>Surface</strong> — used for gray sections, cards and image placeholders.</li><li><strong>Text</strong> — also used for dark sections. Choose a dark text colour on a light theme, or a light one on a dark theme.</li><li><strong>Accent</strong></li><li><strong>Button</strong> and <strong>Button text</strong></li><li><strong>Text on images</strong></li><li><strong>Footer background</strong> and <strong>Footer text</strong></li><li><strong>Announcement bar background</strong> and <strong>Announcement bar text</strong> — optional. Leave empty to follow the header colour scheme. If both are set, they override the header’s announcement colours, except when the header <strong>Color scheme</strong> is <strong>Custom</strong>.</li></ul>
+<h3 id="store-details">Store details</h3>
+<ul><li><strong>Support email</strong> and <strong>Support phone</strong> — leave blank to hide. Shown on the contact page.</li></ul>
+<h3 id="social-links">Social links</h3>
+<p>Instagram, TikTok, X (Twitter), Facebook, YouTube, Pinterest, Threads and Snapchat URL fields. Icons appear in the footer’s <strong>Social</strong> block. If no links are set, that footer column is hidden on the live store.</p>
+<h3 id="theme-behavior">Theme behavior</h3>
+<ul><li><strong>Enable quick view</strong> — default on. Adds Quick View to product cards.</li><li><strong>Enable popup cart recommendations</strong> — default on. Shows recommended products in the popup cart.</li><li><strong>Show free shipping progress bar in cart</strong> — default off. Turn it on to show a progress bar in the popup cart.</li><li><strong>Free shipping threshold</strong> — default <code>100</code>, in your store currency, range 25–500. This must match the free shipping rate you set in <strong>Settings &gt; Shipping and delivery</strong>.</li><li><strong>Show wishlist heart on product cards and product pages</strong> — default off. Decorative only: the heart toggles but does not save items. Connect a wishlist app if you need real saving.</li></ul>
+<h3 id="run-trial">Run trial</h3>
+<p>One place for the run-trial promise. The announcement bar, the <strong>PACE perks</strong> section and the product details accordion can each show it. Turn it off here to remove it everywhere.</p>
+<ul><li><strong>Show run trial</strong> — default on.</li><li><strong>Run trial title</strong> — default <code>30-day run trial</code>.</li><li><strong>Run trial text</strong> — default <code>Run in them for 30 days. Not right? Send them back.</code></li><li><strong>Add run trial to the announcement bar</strong> — default on. Appends the run trial title to the header promo text, separated by a middot.</li></ul>
+<h3 id="size-guide">Size guide</h3>
+<p>Covered in <a href="#9-size-guide">section 9</a>. Look for <strong>Theme settings &gt; Size guide</strong>.</p>
+</section><section class="docs-section" aria-labelledby="5-homepage-sections"><p class="docs-kicker label">05</p><h2 id="5-homepage-sections">Homepage sections</h2>
+<p>The homepage ships with this stack, from top to bottom. In the theme editor you can reorder, hide or add sections at any time.</p>
+<ol><li><strong>PACE hero</strong></li><li><strong>PACE marquee</strong></li><li><strong>PACE activity tiles</strong> (Shop by Activity)</li><li><strong>PACE spec sheet</strong></li><li><strong>PACE product grid</strong></li><li><strong>PACE drop</strong></li><li><strong>PACE club</strong></li><li><strong>PACE perks</strong></li><li><strong>PACE wordmark</strong></li></ol>
+<p>You can also add any of the general sections listed in the <a href="#17-appendix-section-list">appendix</a>, including <strong>FAQ</strong>, <strong>Newsletter</strong>, <strong>Lookbook</strong>, <strong>Shop the look</strong>, <strong>Video hero</strong> and <strong>Custom Liquid</strong>.</p>
+<h3 id="pace-hero">PACE hero</h3>
+<p>Full-width intro with a two-line heading, an accent word, optional buttons and an optional floating product card.</p>
+<ul><li><strong>Eyebrow</strong> — default <code>Session 04 / Winter run</code>.</li><li><strong>Heading line 1</strong> — default <code>Built for</code>.</li><li><strong>Heading line 2</strong> — default <code>the long</code>.</li><li><strong>Accent word</strong> — default <code>run.</code> Shown on its own line in the accent colour.</li><li><strong>Text</strong></li><li><strong>Button 1 label</strong> / <strong>Button 1 link</strong> and <strong>Button 2 label</strong> / <strong>Button 2 link</strong></li><li><strong>Image</strong> and <strong>Image alt text</strong></li><li><strong>Floating product card</strong> — pick a product to show a card on the hero.</li><li><strong>Card label</strong> — default <code>Featured</code>.</li><li><strong>Card note</strong> — default <code>Knit upper · wave sole</code>.</li><li><strong>Color scheme</strong> — Light or Dark.</li></ul>
+<h3 id="pace-marquee">PACE marquee</h3>
+<p>A scrolling line of words.</p>
+<ul><li><strong>Words</strong> — default <code>Run, Train, Recover, Repeat</code>. Separate with commas.</li><li><strong>Color scheme</strong> — Light or Dark.</li></ul>
+<h3 id="pace-activity-tiles">PACE activity tiles</h3>
+<p>See <a href="#8-shop-by-activity-tiles-and-collections">section 8</a>.</p>
+<h3 id="pace-spec-sheet">PACE spec sheet</h3>
+<p>A spotlight for one product’s rating bars and stat boxes. It reads the same data as the product page, so the two always match.</p>
+<ul><li><strong>Product</strong> — the product to feature.</li><li><strong>Use the product&#x27;s specs</strong> — default on. Shows the same specs as the product page (metafield <code>custom.pace_specs</code>, or <code>spec:</code> / <code>stat:</code> tags). The <strong>Rating bar</strong> and <strong>Stat</strong> blocks below are only used when that product has no spec data.</li><li><strong>Image</strong> — leave empty to use the product’s main image.</li><li><strong>Eyebrow</strong> — default <code>Spec sheet</code>.</li><li><strong>Heading</strong> — leave empty to use the product title.</li><li><strong>Text</strong></li><li><strong>Show price</strong></li><li><strong>Button label</strong> — default <code>Shop now</code>.</li><li><strong>Color scheme</strong> — Dark, Surface or Light.</li><li><strong>Image position</strong> — Left or Right.</li></ul>
+<p>Blocks (up to 10 total):</p>
+<ul><li><strong>Rating bar</strong> — <strong>Label</strong> (default <code>Cushion</code>) and <strong>Score</strong> (1–5).</li><li><strong>Stat</strong> — <strong>Label</strong> (default <code>Weight</code>) and <strong>Value</strong> (default <code>212 g</code>).</li></ul>
+<h3 id="pace-product-grid">PACE product grid</h3>
+<ul><li><strong>Heading</strong> — default <code>New in</code>.</li><li><strong>Collection</strong></li><li><strong>Products</strong> — how many cards to show, 2–12, default 4.</li><li><strong>Badge</strong> — default <code>New</code>.</li><li><strong>Sale badge</strong> — default <code>Sale</code>.</li><li><strong>Colors label</strong> — default <code>colors</code>.</li><li><strong>View all label</strong> — default <code>View all</code>.</li></ul>
+<p>If the selected collection is empty, the grid shows placeholder cards and hides the View all link.</p>
+<h3 id="pace-drop">PACE drop</h3>
+<p>See <a href="#10-drop-countdown">section 10</a>.</p>
+<h3 id="pace-club">PACE club</h3>
+<p>A large image plus two small images, with a short invitation.</p>
+<ul><li><strong>Large image</strong>, <strong>Small image 1</strong>, <strong>Small image 2</strong></li><li><strong>Eyebrow</strong> — default <code>The PACE club</code>.</li><li><strong>Heading</strong> — default uses two line breaks: <code>Run with us.</code> / <code>Every Saturday,</code> / <code>7 AM.</code></li><li><strong>Link label</strong> — default <code>Find a run club</code>.</li><li><strong>Link</strong></li></ul>
+<h3 id="pace-perks">PACE perks</h3>
+<p>Up to 4 <strong>Perk</strong> blocks.</p>
+<ul><li><strong>Title</strong> and <strong>Text</strong></li><li><strong>Use run trial from Theme settings</strong> — shows the title and text from <strong>Theme settings &gt; Run trial</strong>, and hides this perk when the run trial is off.</li></ul>
+<h3 id="pace-wordmark">PACE wordmark</h3>
+<ul><li><strong>Wordmark</strong> — default <code>PACE</code>.</li></ul>
+</section><section class="docs-section" aria-labelledby="6-mega-menu"><p class="docs-kicker label">06</p><h2 id="6-mega-menu">Mega menu</h2>
+<p>The desktop mega menu is driven by your navigation menu, plus optional promo tiles in the header.</p>
+<p>It appears at <strong>1024 px and wider</strong>. Below that, the desktop panel is hidden and the <strong>Mobile menu type</strong> is used instead (Drawer, Overlay or Inline; default Drawer).</p>
+<h3 id="build-the-menu">Build the menu</h3>
+<ol><li>Go to <strong>Online Store &gt; Navigation</strong> and edit the menu selected in <strong>Header &gt; Main menu</strong> (default <code>main-menu</code>).</li><li>The top-level item is the link in the header, for example <code>Shop</code>.</li><li>Children of that item become <strong>columns</strong>. The child’s title is the column heading and links to the child’s URL.</li><li>Grandchildren of that item become the <strong>links</strong> under the column.</li></ol>
+<p>A top-level item opens a mega panel when it has at least one child, or when at least one <strong>Mega menu promo</strong> block targets it.</p>
+<p>A child with no grandchildren still shows as a column with only its heading link.</p>
+<h3 id="add-promo-tiles">Add promo tiles</h3>
+<p>In the theme editor, open the <strong>Header</strong> section and add a <strong>Mega menu promo</strong> block (up to 12 header blocks total).</p>
+<ul><li><strong>Menu item title</strong> — must match the top-level link title in Navigation, for example <code>Shop</code>. The match is not case-sensitive, but the wording must be the same.</li><li><strong>Image</strong></li><li><strong>Heading</strong> — default <code>New this week</code>.</li><li><strong>Link</strong> — leave empty to use the menu item’s own link.</li><li><strong>Button text</strong> — optional.</li></ul>
+<p>Up to <strong>2 promo tiles</strong> show for each top-level item. Extra blocks for the same item are ignored. Promo tiles do not appear in the mobile menu.</p>
+<h3 id="keyboard-and-behaviour">Keyboard and behaviour</h3>
+<ul><li>Hover, or moving focus onto the item, opens the panel.</li><li><strong>Enter</strong> or <strong>Space</strong> on the panel’s toggle button, or <strong>Space</strong> on the top-level link, opens the panel and moves focus into it.</li><li><strong>Down arrow</strong> on the link or the toggle does the same.</li><li><strong>Escape</strong> closes the panel and returns focus to the top-level link.</li><li>Quick View and the popup cart open above the panel.</li></ul>
+<h3 id="other-useful-header-settings">Other useful header settings</h3>
+<ul><li><strong>Enable sticky header</strong> and <strong>Enable sticky header on mobile</strong></li><li><strong>Hide sticky header on scroll down</strong></li><li><strong>Color scheme</strong> — Dark, Light or Custom. Light uses the theme’s paper background and ink text; Dark is the inverse. Custom uses <strong>Custom background</strong>, <strong>Custom text</strong>, <strong>Custom link color</strong> and <strong>Custom hover color</strong>, plus the header’s own <strong>Announcement background</strong> and <strong>Announcement text</strong>.</li><li><strong>Show announcement bar</strong>, <strong>Promo text</strong>, <strong>Promo link</strong>, <strong>Promo link label</strong></li><li><strong>Hide announcement on mobile</strong>, <strong>Announcement text size</strong>, <strong>Announcement vertical padding</strong></li><li><strong>Secondary header text</strong>, <strong>Featured link label</strong>, <strong>Featured link</strong></li><li><strong>Enable search panel</strong>, <strong>Search heading</strong>, <strong>Search placeholder</strong>, <strong>Search help text</strong></li><li><strong>Show wishlist icon</strong> — decorative only. Connect a wishlist app to save items.</li><li><strong>Cart icon style</strong> — Cart or Shopping bag.</li><li><strong>Utility menu</strong> — optional extra links.</li></ul>
+<p>The announcement bar only shows when <strong>Show announcement bar</strong> is on and <strong>Promo text</strong> is not empty. If <strong>Add run trial to the announcement bar</strong> is on, the run trial title is appended to the promo text.</p>
+</section><section class="docs-section" aria-labelledby="7-spec-and-stat-tags"><p class="docs-kicker label">07</p><h2 id="7-spec-and-stat-tags">Spec and stat tags</h2>
+<p>This is PACE’s signature feature. Add tags to a product and the theme draws rating bars and stat boxes on the product page (<strong>PACE product specs</strong>) and on the homepage (<strong>PACE spec sheet</strong>). No app and no code.</p>
+<h3 id="tag-format">Tag format</h3>
+<div class="docs-table-wrap" tabindex="0"><table><thead><tr><th>Type</th><th>Pattern</th><th>Example</th><th>Result</th></tr></thead><tbody><tr><td>Rating bar</td><td><code>spec:Name:N</code></td><td><code>spec:Cushion:4</code></td><td>A bar labelled Cushion, scored 4 / 5</td></tr><tr><td>Stat box</td><td><code>stat:Name:value</code></td><td><code>stat:Weight:212 g</code></td><td>A box labelled Weight, value 212 g</td></tr></tbody></table></div><p>Rules:</p>
+<ul><li>Use <strong>exactly two colons</strong>. The theme splits each tag on <code>:</code> and ignores anything that does not have three parts.</li><li><strong>Name</strong> is the label customers see (for example <code>Cushion</code> or <code>Weight</code>).</li><li>For <code>spec:</code> tags, <strong>N</strong> is a whole number from 1 to 5. Values are clamped to that range.</li><li>For <code>stat:</code> tags, the <strong>value</strong> may contain spaces (<code>6 mm</code>, <code>198 g</code>) but <strong>must not contain a colon</strong>.</li><li><code>spec</code> and <code>stat</code> are not case-sensitive (<code>SPEC:Cushion:4</code> works). The label is shown as you typed it.</li><li>Tags are shown in the order Shopify returns them, which is <strong>alphabetical</strong>.</li></ul>
+<p>Copy-paste set, as used on the demo Metro Runner:</p>
+<pre><code>spec:Cushion:3
+spec:Grip:4
+spec:Responsiveness:5
+spec:Stability:3
+stat:Drop:6 mm
+stat:Stack:32 mm
+stat:Weight:198 g</code></pre>
+<p>To add them: open the product in Shopify, find <strong>Tags</strong>, paste each tag, and save.</p>
+<h3 id="optional-metafield-override">Optional metafield override</h3>
+<p>If you set a product metafield named <strong><code>custom.pace_specs</code></strong> (JSON), and it contains any bars or stats, the theme uses that metafield and <strong>ignores the tags</strong> for that product.</p>
+<p>Example value:</p>
+<pre><code class="language-json">{
+  &quot;bars&quot;: [{ &quot;label&quot;: &quot;Cushion&quot;, &quot;score&quot;: 3 }],
+  &quot;stats&quot;: [{ &quot;label&quot;: &quot;Drop&quot;, &quot;value&quot;: &quot;6 mm&quot; }]
+}</code></pre>
+<p><code>score</code> can also be sent as <code>value</code>. This metafield is optional. Most stores only need tags.</p>
+<h3 id="pace-product-specs-product-page">PACE product specs (product page)</h3>
+<p>This section is available on product templates.</p>
+<ul><li>The editor note in the section reads: specs come from <code>custom.pace_specs</code> if set, otherwise from product tags.</li><li><strong>Eyebrow</strong> — default <code>Spec sheet</code>.</li><li><strong>Heading</strong> — default <code>Built to move</code>.</li><li><strong>Text when a product has no spec tags</strong> — shown when the product has neither metafield data nor tags.</li><li><strong>Open the first detail</strong> — default on.</li></ul>
+<p><strong>Detail</strong> blocks (accordion rows under the specs):</p>
+<ul><li><strong>Title</strong> and <strong>Content</strong></li><li><strong>Add run trial</strong> — adds the title and text from <strong>Theme settings &gt; Run trial</strong>. Hidden when the run trial is off.</li><li><strong>Add refund policy link</strong> — only shows when a refund policy is published in <strong>Settings &gt; Policies</strong>.</li></ul>
+<p>The shipped product template includes three details: <strong>Fit notes</strong>, <strong>Shipping &amp; returns</strong> (with run trial and refund link on) and <strong>Care</strong>. Edit the copy to match your store. Only list policies and shipping times that are actually true for you.</p>
+</section><section class="docs-section" aria-labelledby="8-shop-by-activity-tiles-and-collections"><p class="docs-kicker label">08</p><h2 id="8-shop-by-activity-tiles-and-collections">Shop by Activity tiles and collections</h2>
+<p>The <strong>PACE activity tiles</strong> section is the Shop by Activity grid on the homepage.</p>
+<h3 id="section-settings">Section settings</h3>
+<ul><li><strong>Heading</strong> — default <code>Shop by</code> on one line and <code>activity</code> on the next (you can type a line break in the field).</li><li><strong>Count label</strong> — default <code>Categories</code>. The section prefixes the visible tile count, for example <code>04 Categories</code>.</li></ul>
+<h3 id="each-tile-block">Each Tile block</h3>
+<p>You can add up to 6 tiles. The shipped homepage is set up for four: Run, Train, Recover and Studio.</p>
+<ul><li><strong>Collection</strong> — the tile links here. Leave this empty <strong>and</strong> clear <strong>Link</strong> to hide the tile on the live store. In the editor, an unset tile stays visible but dimmed, with a note.</li><li><strong>Image</strong> — leave empty to use the collection image.</li><li><strong>Title</strong> — leave empty to use the collection title.</li><li><strong>Link</strong> — optional. Only used when no collection is picked.</li></ul>
+<p>The whole section hides on the live store when no tile has a collection or a link.</p>
+<h3 id="how-many-columns-you-will-see">How many columns you will see</h3>
+<p>The grid uses one column per <strong>visible</strong> tile, with a minimum of 2 and a maximum of 4:</p>
+<ul><li>2 visible tiles → 2 columns</li><li>3 visible tiles → 3 columns</li><li>4, 5 or 6 visible tiles → 4 columns (the fifth and sixth wrap to the next row)</li></ul>
+<p>If you expected four columns and only see two, the Recover and Studio tiles (or whichever are missing) do not have a collection or a link yet.</p>
+<h3 id="set-up-the-four-demo-style-tiles">Set up the four demo-style tiles</h3>
+<ol><li>In Shopify, create a collection for each activity (manual or automated), for example Run, Train, Recover and Studio, and add the right products to each.</li><li>Optional: add a collection image, or you can pick an image on the tile itself.</li><li>In <strong>Customize</strong>, open <strong>PACE activity tiles</strong>. For each <strong>Tile</strong>, pick the matching <strong>Collection</strong>. Set <strong>Title</strong> only if you want wording that differs from the collection name.</li><li>Save and preview the homepage. You should see four columns, and each tile should open its collection.</li></ol>
+</section><section class="docs-section" aria-labelledby="9-size-guide"><p class="docs-kicker label">09</p><h2 id="9-size-guide">Size guide</h2>
+<p>The size guide is a dialog on the product page, opened by a link next to a variant option (usually Size). <strong>Escape</strong> closes it and returns focus to the link.</p>
+<h3 id="which-guide-a-product-gets">Which guide a product gets</h3>
+<p>The theme picks a guide in this order:</p>
+<ol><li>A product metafield <strong><code>custom.size_guide</code></strong> that references a page. If set, this always wins.</li><li>If the product is <strong>footwear</strong> — its product type is listed in <strong>Footwear product types</strong>, or it is tagged <code>footwear</code> / <code>Footwear</code>:</li></ol>
+<p>- the <strong>Footwear size guide page</strong>, if one is selected, otherwise</p>
+<p>- the <strong>Footwear guide title</strong> and <strong>Footwear guide text</strong> from theme settings.</p>
+<ol><li>For every other product: the <strong>Size guide page</strong> selected on the <strong>Main product</strong> section.</li></ol>
+<p>The link is hidden when no guide content applies, even if <strong>Show size guide link</strong> is on.</p>
+<h3 id="theme-settings-size-guide">Theme settings &gt; Size guide</h3>
+<ul><li><strong>Footwear product types</strong> — default <code>Shoes, Footwear, Sneakers</code>. Comma-separated. Products of these types, or tagged <code>footwear</code>, use the footwear guide.</li><li><strong>Footwear size guide page</strong> — optional. Leave empty to use the footwear text below.</li><li><strong>Footwear guide title</strong> — default <code>Footwear size guide</code>.</li><li><strong>Footwear guide text</strong> — default copy explains a true-to-size fit and how to measure. Clear this (and leave the footwear page empty) to hide the size guide on footwear that do not have a metafield page.</li><li><strong>Add a between-sizes tip for footwear</strong> — default on. Adds a tip to pick the next whole size when only whole sizes are sold, or the next half size when half sizes exist, based on the product’s actual Size values.</li></ul>
+<h3 id="main-product-section-product-page">Main product section (product page)</h3>
+<p>Under the <strong>Size guide</strong> header:</p>
+<ul><li><strong>Show size guide link</strong> — default on.</li><li><strong>Size guide page</strong> — create a page under <strong>Online Store &gt; Pages</strong> with your apparel size chart, then pick it here. This is the guide for non-footwear products. The shipped theme looks for a page with the handle <code>size-guide</code>; if that page does not exist in your store, select your own page.</li><li><strong>Show the link next to the option named</strong> — default <code>Size</code>. The link appears beside the option whose name matches this text.</li></ul>
+<p>Only list fit advice that is true for your products. The default footwear text is a starting point, not a claim about your inventory.</p>
+</section><section class="docs-section" aria-labelledby="10-drop-countdown"><p class="docs-kicker label">10</p><h2 id="10-drop-countdown">Drop countdown</h2>
+<p>The homepage uses the <strong>PACE drop</strong> section.</p>
+<h3 id="launch-time">Launch time</h3>
+<ul><li><strong>Launch date</strong> — <code>YYYY-MM-DD</code>, default <code>2026-12-12</code>. Leave empty for an email signup with no countdown.</li><li><strong>Launch time</strong> — 24-hour <code>HH:MM</code> in the time zone below, default <code>09:00</code>.</li><li><strong>UTC offset</strong> — the offset of the launch time zone <strong>on launch day</strong>, for example <code>-05:00</code> for New York in winter or <code>-04:00</code> in summer. Default <code>-05:00</code>. Type it carefully; this field is plain text.</li><li><strong>Time zone label</strong> — default <code>ET</code>. Shown after the launch time. Leave empty to show the UTC offset instead.</li></ul>
+<p>If the date or time is missing or invalid, the countdown and the launch line are hidden. The rest of the section still shows.</p>
+<p>The launch line is built from the date, time and label you entered. It does not convert time zones for the shopper’s location.</p>
+<h3 id="before-and-after-launch">Before and after launch</h3>
+<ul><li><strong>Eyebrow</strong>, <strong>Heading line 1</strong>, <strong>Heading line 2</strong></li><li><strong>Background image</strong> — optional. Without an image, the section uses the button colour.</li><li><strong>Image overlay</strong> — 0–90%, default 55%.</li><li><strong>After launch</strong> — <strong>Show live message</strong> (default) or <strong>Hide this section</strong>.</li><li><strong>Live message</strong> — default <code>Live now</code>.</li><li><strong>Live button label</strong> — default <code>Shop the drop</code>.</li><li><strong>Live button link</strong> — the button only shows when a link is set.</li><li><strong>Link anchor</strong> — default <code>drop</code>. Link to this section with <code>/#drop</code> (the demo header featured link uses this).</li><li><strong>Show email signup</strong> — default on. This is Shopify’s customer/newsletter form, not a third-party app.</li><li><strong>Email placeholder</strong>, <strong>Button label</strong>, <strong>Success message</strong></li></ul>
+<h3 id="another-countdown-section">Another countdown section</h3>
+<p>The theme also includes a section named <strong>Drop countdown</strong> (an older layout, with a time-zone dropdown and separate before/after button labels). The homepage uses <strong>PACE drop</strong>. You can add <strong>Drop countdown</strong> to other pages if you prefer that layout. Do not put both on the same page unless you mean to show two timers.</p>
+</section><section class="docs-section" aria-labelledby="11-popup-cart-quick-view-and-search"><p class="docs-kicker label">11</p><h2 id="11-popup-cart-quick-view-and-search">Popup cart, Quick View and search</h2>
+<h3 id="popup-cart">Popup cart</h3>
+<p>Clicking the cart icon in the header opens the <strong>popup cart</strong> (not a full-page jump). Shoppers can change quantities, remove lines, and go to checkout from there. A full cart page still exists if someone visits <code>/cart</code>.</p>
+<p>Related settings, under <strong>Theme settings &gt; Theme behavior</strong>:</p>
+<ul><li><strong>Enable popup cart recommendations</strong></li><li><strong>Show free shipping progress bar in cart</strong></li><li><strong>Free shipping threshold</strong></li></ul>
+<p>The progress bar compares the cart subtotal with that threshold. It will confuse shoppers if your real free-shipping rate in <strong>Settings &gt; Shipping and delivery</strong> is a different amount, so keep them in sync.</p>
+<p><strong>Escape</strong> closes the popup cart. The header <strong>Cart icon style</strong> can be Cart or Shopping bag.</p>
+<h3 id="quick-view">Quick View</h3>
+<p>When <strong>Enable quick view</strong> is on, product cards can open a Quick View dialog so shoppers can pick a variant and add to the popup cart without leaving the grid. <strong>Escape</strong> closes Quick View.</p>
+<h3 id="search">Search</h3>
+<p><strong>Header &gt; Enable search panel</strong> turns on the header search. Predictive search is built in. The collection and search result pages can show storefront filters when <strong>Enable storefront filters</strong> (collection) or <strong>Show filters on search results</strong> (search) is on. Filters use Shopify’s storefront filtering; set them up under <strong>Settings &gt; Search &amp; Discovery</strong> if your shop’s plan supports it.</p>
+</section><section class="docs-section" aria-labelledby="12-product-page"><p class="docs-kicker label">12</p><h2 id="12-product-page">Product page</h2>
+<p>The shipped product template is, from top to bottom:</p>
+<ol><li><strong>Main product</strong> — media, title, price, variants, add to cart, size guide link, trust badges.</li><li><strong>PACE product specs</strong> — rating bars, stat boxes and detail accordion (see <a href="#7-spec-and-stat-tags">section 7</a>).</li><li><strong>Product recommendations</strong> — <strong>You may also like</strong> (related products).</li><li><strong>Product recommendations</strong> — <strong>Pairs well with</strong> (complementary products). Complementary recommendations need to be set up in <strong>Settings &gt; Search &amp; Discovery</strong>.</li></ol>
+<h3 id="main-product-settings">Main product settings</h3>
+<ul><li><strong>Enable sticky add to cart (mobile)</strong> — default on. A sticky bar on small screens. Desktop sticky add-to-cart is not in this version.</li><li><strong>&quot;Part of ... Collection&quot; label</strong> — Automatic or Hide. Automatic shows one real category collection. It skips the collections listed below, sale collections, and men/women when a product is in both.</li><li><strong>Collections to skip in the label</strong> — default <code>all, frontpage, new-arrivals, best-sellers, sale</code>. Use collection handles, separated by commas.</li><li><strong>Show vendor or product type</strong>, <strong>Show price</strong>, <strong>Show description</strong>, <strong>Show dynamic checkout buttons</strong></li><li>Size guide settings — see <a href="#9-size-guide">section 9</a>.</li><li><strong>Show back-in-stock signup on sold-out variants</strong> — default on. Signups are saved in <strong>Customers</strong> with the tags <code>back-in-stock</code> and the product handle. Email those customers when you restock.</li><li><strong>Show low stock message</strong> — default off. Uses real inventory. Only appears for variants tracked by Shopify with stock at or below <strong>Low stock threshold</strong> (default 5).</li><li><strong>Show custom note under add to cart</strong> and <strong>Custom note text</strong> — static text on every product. Only use statements that are true for your store.</li><li><strong>Show trust notes under sticky add to cart</strong></li><li><strong>Show trust badges row</strong>, plus optional <strong>Shipping</strong>, <strong>Returns</strong> and <strong>Warranty</strong> badges and their promise text. <strong>Returns link</strong> can be left empty to use your refund policy from <strong>Settings &gt; Policies</strong>.</li></ul>
+<p>Blocks you can add on <strong>Main product</strong>:</p>
+<ul><li>App blocks</li><li><strong>Collapsible info tab</strong> — <strong>Heading</strong>, <strong>Content</strong>, <strong>Open by default</strong></li><li><strong>Custom Liquid</strong></li></ul>
+<p>Sold-out variants are still shown and cannot be added to the cart. The back-in-stock form appears when that setting is on.</p>
+</section><section class="docs-section" aria-labelledby="13-faq-page"><p class="docs-kicker label">13</p><h2 id="13-faq-page">FAQ page</h2>
+<p>PACE includes a product-page-style <strong>FAQ</strong> section and a page template that already has it.</p>
+<p>To publish an FAQ page:</p>
+<ol><li>Go to <strong>Online Store &gt; Pages</strong> and create a page (for example titled <code>FAQ</code>, which gives the handle <code>faq</code> and the URL <code>/pages/faq</code>).</li><li>In the page’s <strong>Theme template</strong> list, choose the <strong>faq</strong> template.</li><li>Click <strong>Save</strong>, then <strong>Customize</strong> the page to edit the questions.</li></ol>
+<p>The <strong>FAQ</strong> section settings include:</p>
+<ul><li><strong>Show section</strong>, <strong>Heading</strong>, <strong>Subheading</strong>, <strong>Description</strong>, <strong>Text alignment</strong></li><li><strong>Color scheme</strong> — Light, Dark or Custom</li><li><strong>Layout mode</strong> — Accordion, or Two-column accordion</li><li><strong>Open first item by default</strong>, <strong>Show expand/collapse controls</strong></li><li>Spacing, type sizes and control-button styles</li></ul>
+<p>Each <strong>FAQ item</strong> block has a <strong>Question</strong> and an <strong>Answer</strong> (rich text). The section allows up to 16 items.</p>
+<p>The shipped template includes four starter questions (shipping, returns, size, international shipping). Rewrite them so they match your policies. A <code>/pages/faq</code> URL will 404 until you create the page and assign the template.</p>
+<p>You can also add the <strong>FAQ</strong> section to any other page or to the homepage.</p>
+</section><section class="docs-section" aria-labelledby="14-footer-social-and-newsletter"><p class="docs-kicker label">14</p><h2 id="14-footer-social-and-newsletter">Footer, social and newsletter</h2>
+<p>The <strong>Footer</strong> section lives in the footer group.</p>
+<p>Useful settings:</p>
+<ul><li><strong>Show section</strong>, <strong>Color scheme</strong> (Dark, Light or Custom), <strong>Brand text</strong>, <strong>Legal text</strong></li><li><strong>Desktop columns</strong> (2, 3 or 4) and <strong>Mobile layout</strong> (Single column or Two columns)</li><li><strong>Hide menu columns on mobile</strong>, <strong>Hide social block on mobile</strong></li><li><strong>Show contact/hours row</strong>, <strong>Contact email</strong>, <strong>Contact phone</strong>, <strong>Store hours</strong></li><li><strong>Show trust note</strong> and <strong>Trust note</strong> — only list services your store actually offers.</li><li><strong>Show payment icons</strong> — automatically shows the payment methods enabled in your store.</li><li><strong>Show payment badges text</strong> and <strong>Payment badges text</strong></li><li><strong>Bottom menu</strong> — optional, good for legal links.</li></ul>
+<p>Blocks (up to 6):</p>
+<ul><li><strong>Menu column</strong> — <strong>Heading</strong> and <strong>Menu</strong></li><li><strong>Help &amp; policies</strong> — <strong>Heading</strong>, <strong>Text</strong>, optional <strong>Menu</strong>, and <strong>Show store policy links</strong> (lists every policy you have filled in under <strong>Settings &gt; Policies</strong>)</li><li><strong>Newsletter</strong> — <strong>Heading</strong>, <strong>Description</strong>, <strong>Email placeholder</strong>, <strong>Button label</strong></li><li><strong>Social</strong> — <strong>Heading</strong> and <strong>Description</strong>. Icons come from <strong>Theme settings &gt; Social links</strong>. The column is hidden when no social links are set.</li><li><strong>Text</strong> — <strong>Heading</strong> and <strong>Body</strong></li></ul>
+<p>The shipped footer uses four columns: Shop, Help, Stay connected and Newsletter, with payment icons on.</p>
+</section><section class="docs-section" aria-labelledby="15-support-updates-and-license"><p class="docs-kicker label">15</p><h2 id="15-support-updates-and-license">Support, updates and license</h2>
+<h3 id="support">Support</h3>
+<p>Questions about the theme: email <strong>klicksparkstudio@gmail.com</strong> or message us on Etsy. We reply within 2 business days.</p>
+<p>Include your Shopify store URL, the PACE version (this is 1.0; you can also see it under the theme’s <strong>Theme info</strong> in the editor), and a screenshot or screen recording of the issue.</p>
+<p>Theme features in this guide do not require a paid app. If something needs an app (a real wishlist, a reviews platform), that app’s billing is separate.</p>
+<h3 id="updates">Updates</h3>
+<p>Bug-fix updates for PACE 1.x are free. When a new version ships, the Etsy download file is replaced and you can re-download it from your Purchases page.</p>
+<p>Uploading a new zip creates a new theme in your library. It does not overwrite the published theme. Preview the new one, copy over any editor changes you still need, then publish it.</p>
+<h3 id="license">License</h3>
+<p>One purchase = one Shopify store. You may customize the theme freely for that store. You may not resell, share or redistribute the theme files.</p>
+<h3 id="refunds">Refunds</h3>
+<p>This is an instant digital download, so sales are final. If a file is broken or will not install and we cannot fix it, we will refund you.</p>
+<h3 id="install-service">Install service</h3>
+<p>A paid install on one store is offered as a <strong>separate</strong> Etsy listing for $149. The theme purchase does not include installation.</p>
+</section><section class="docs-section" aria-labelledby="16-troubleshooting"><p class="docs-kicker label">16</p><h2 id="16-troubleshooting">Troubleshooting</h2>
+<p><strong>The Shop by Activity grid is 2 columns, not 4.</strong><br>A tile only counts when it has a <strong>Collection</strong> or a <strong>Link</strong>. Create the missing collections, pick them on the Recover and Studio tiles (or your equivalent), and save. See <a href="#8-shop-by-activity-tiles-and-collections">section 8</a>.</p>
+<p><strong>Spec bars or stats do not show.</strong><br>Check the tag has exactly two colons (<code>spec:Cushion:4</code>, not <code>spec:Cushion 4</code>). Scores must be a number. Stat values cannot contain a colon. If <code>custom.pace_specs</code> is set and has any bars or stats, tags are ignored. On the homepage, confirm <strong>PACE spec sheet</strong> has a <strong>Product</strong> picked and <strong>Use the product&#x27;s specs</strong> is on.</p>
+<p><strong>The size guide link is missing.</strong><br>The link only shows when there is guide content. For footwear, set <strong>Footwear guide text</strong> or a <strong>Footwear size guide page</strong>, or tag the product <code>footwear</code> / set its product type to one of the types in the list. For apparel, pick a <strong>Size guide page</strong> on the <strong>Main product</strong> section. A <code>custom.size_guide</code> metafield, if used, must reference a page that has content.</p>
+<p><strong>Mega menu promo tiles do not appear.</strong><br><strong>Menu item title</strong> must match the top-level navigation title (for example <code>Shop</code>). Promo tiles only show at 1024 px and wider, and only two tiles per item are used.</p>
+<p><strong>The announcement bar is still Volt’s dark grey after I switched to Ember or Glacier.</strong><br>In <strong>Theme settings &gt; Colors</strong>, clear <strong>Announcement bar background</strong> and <strong>Announcement bar text</strong>, or upload the Ember / Glacier zip instead.</p>
+<p><strong>The header logo still says PACE (or, on a reset block, a default brand name).</strong><br>Set <strong>Header &gt; Logo text</strong> or upload a <strong>Logo image</strong>.</p>
+<p><strong><code>/pages/faq</code> is a 404.</strong><br>Create a page and assign the <strong>faq</strong> template. The template is in the theme; the page has to exist in the store.</p>
+<p><strong>Quick View or the popup cart does not open.</strong><br>Confirm <strong>Enable quick view</strong> and that you are clicking a card’s Quick View control or the header cart icon. Try a hard refresh after publishing.</p>
+<p><strong>The free shipping bar does not show, or the amount looks wrong.</strong><br>Turn on <strong>Show free shipping progress bar in cart</strong>, and set <strong>Free shipping threshold</strong> to the same amount as your shipping rate.</p>
+<p><strong>Search cannot find a product.</strong><br>The product must be active and available in the Online Store channel. Shopify search uses the product title, tags and other storefront search fields from <strong>Settings &gt; Search &amp; Discovery</strong>.</p>
+<p><strong>The theme does not look like the demo after a clean install.</strong><br>That is expected until you add products, photos and collections, and pick them in the hero, activity tiles, spec sheet and product grid. The layout and colours of the preset you installed should already match. If you uploaded Volt and wanted Ember, upload the Ember zip.</p>
+<p><strong>I need a second store.</strong><br>The license is one store per purchase. Buy a second license for a second store, or contact support if you are unsure.</p>
+</section><section class="docs-section" aria-labelledby="17-appendix-section-list"><p class="docs-kicker label">17</p><h2 id="17-appendix-section-list">Appendix: section list</h2>
+<p>These are the section names as they appear when you click <strong>Add section</strong>. PACE 1.0 includes 30 addable content sections, plus the Header, Footer and the usual template sections (product, collection, cart, blog, account, search, 404, password and so on).</p>
+<p><strong>PACE sections</strong></p>
+<ul><li>PACE hero</li><li>PACE marquee</li><li>PACE activity tiles</li><li>PACE spec sheet</li><li>PACE product grid</li><li>PACE drop</li><li>PACE club</li><li>PACE perks</li><li>PACE wordmark</li><li>PACE product specs (product templates only)</li></ul>
+<p><strong>General sections</strong></p>
+<ul><li>Contact form</li><li>Custom Liquid</li><li>Rich text</li><li>Sale banner</li><li>Product recommendations</li><li>Collage</li><li>Drop countdown</li><li>FAQ</li><li>Feature Grid</li><li>Featured product</li><li>Hero</li><li>Image with text</li><li>Logo bar</li><li>Lookbook</li><li>Multicolumn</li><li>Newsletter</li><li>Shop the look</li><li>Testimonials</li><li>Trend Report</li><li>Video hero</li></ul>
+<p>Some general section files still use older internal file names. In the editor they show the labels above. They are part of PACE and are safe to use.</p>
+<p><strong>Optional metafields</strong> (create these in <strong>Settings &gt; Custom data</strong> only if you need the override):</p>
+<ul><li><code>custom.pace_specs</code> — JSON, on products. Overrides spec and stat tags when it contains bars or stats.</li><li><code>custom.size_guide</code> — page reference, on products. Overrides the automatic size guide.</li></ul>
+<p>© KlickSpark. PACE 1.0. One purchase, one store. This guide is included with the theme.</p>
+</section>
+
+        <p class="docs-end">© KlickSpark. PACE 1.0. One purchase, one store. This guide is included with the theme.</p>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer on-dark" id="support">
+    <div class="wrap">
+      <p class="display site-footer__big" aria-hidden="true">KlickSpark</p>
+      <div class="site-footer__grid">
+        <div>
+          <h2 class="label">Support</h2>
+          <p>Questions about a theme or your download?</p>
+          <p><a href="mailto:klicksparkstudio@gmail.com">klicksparkstudio@gmail.com</a></p>
+        </div>
+        <div>
+          <h2 class="label">Themes</h2>
+          <ul>
+            <li><a href="pace.html">PACE</a></li>
+            <li><a href="pace-docs.html" aria-current="page">PACE docs</a></li>
+            <li><a href="u-street.html">U-Street</a></li>
+            <li><a href="https://ustreet-theme-test.myshopify.com" target="_blank" rel="noopener">Live demo<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><span class="muted">Aura — coming soon</span></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="label">Studio</h2>
+          <ul>
+            <li><a href="index.html#custom">Custom builds</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="site-footer__base label">
+        <span>© 2026 KlickSpark Media</span>
+        <span>KlickSpark Studio is a product of KlickSpark Media</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+  <script>
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll('.docs-toc a'));
+      var targets = links.map(function (a) {
+        var id = (a.getAttribute('href') || '').replace('#', '');
+        return document.getElementById(id);
+      }).filter(Boolean);
+      if (!targets.length || !('IntersectionObserver' in window)) return;
+      var current = null;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) current = entry.target.id;
+        });
+        if (!current) return;
+        links.forEach(function (a) {
+          a.classList.toggle('is-active', a.getAttribute('href') === '#' + current);
+        });
+      }, { rootMargin: '-20% 0px -70% 0px', threshold: 0 });
+      targets.forEach(function (el) { io.observe(el); });
+      document.querySelectorAll('.docs-toc__mobile a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          var details = a.closest('details');
+          if (details) details.open = false;
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
