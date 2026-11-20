@@ -241,7 +241,7 @@ ul, ol { padding: 0; list-style: none; }
   background: var(--black); border: 2px solid var(--black);
 }
 @media (min-width: 760px) { .theme-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (min-width: 1100px) { .theme-grid { grid-template-columns: 2fr 1fr 1fr; } }
+@media (min-width: 1100px) { .theme-grid { grid-template-columns: 1fr 1fr; } }
 
 .theme-card {
   position: relative; display: flex; flex-direction: column;
