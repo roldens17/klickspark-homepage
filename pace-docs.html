@@ -238,7 +238,7 @@
           <li><a href="index.html#custom">Custom builds</a></li>
           <li><a href="#support">Support</a></li>
         </ul>
-        <a href="/downloads/PACE-Docs-v1.0.pdf" class="btn btn--sm">Download PDF</a>
+        <a href="/downloads/PACE-Docs-v1.0.pdf" class="btn btn--sm">Download Buyer Guide (PDF) · for PACE 1.0.3</a>
       </nav>
     </div>
   </header>
@@ -256,7 +256,7 @@
           <li>Support <a href="mailto:klicksparkstudio@gmail.com">klicksparkstudio@gmail.com</a></li>
         </ul>
         <div class="docs-hero__actions">
-          <a href="/downloads/PACE-Docs-v1.0.pdf" class="btn">Download PDF <span class="arrow" aria-hidden="true">↓</span></a>
+          <a href="/downloads/PACE-Docs-v1.0.pdf" class="btn">Download Buyer Guide (PDF) · for PACE 1.0.3 <span class="arrow" aria-hidden="true">↓</span></a>
           <a href="mailto:klicksparkstudio@gmail.com" class="btn btn--outline">Email support</a>
         </div>
         <p class="note muted" style="margin-top:18px">We reply within 2 business days.</p>
@@ -353,7 +353,7 @@
 <h3 id="add-promo-tiles">Add promo tiles</h3>
 <p>In the theme editor, open the <strong>Header</strong> section and add a <strong>Mega menu promo</strong> block (up to 12 header blocks total).</p>
 <ul><li><strong>Menu item title</strong> — must match the top-level link title in Navigation, for example <code>Shop</code>. The match is not case-sensitive, but the wording must be the same.</li><li><strong>Image</strong></li><li><strong>Heading</strong> — default <code>New this week</code>.</li><li><strong>Link</strong> — leave empty to use the menu item’s own link.</li><li><strong>Button text</strong> — optional.</li></ul>
-<p>Up to <strong>2 promo tiles</strong> show for each top-level item. Extra blocks for the same item are ignored. Promo tiles do not appear in the mobile menu.</p>
+<p>Up to <strong>2 promo tiles</strong> show for each top-level item. Extra blocks for the same item are ignored. On desktop (1024 px and wider) they appear in the mega panel; on smaller screens they appear in the mobile menu when that menu item is expanded.</p>
 <h3 id="keyboard-and-behaviour">Keyboard and behaviour</h3>
 <ul><li>Hover, or moving focus onto the item, opens the panel.</li><li><strong>Enter</strong> or <strong>Space</strong> on the panel’s toggle button, or <strong>Space</strong> on the top-level link, opens the panel and moves focus into it.</li><li><strong>Down arrow</strong> on the link or the toggle does the same.</li><li><strong>Escape</strong> closes the panel and returns focus to the top-level link.</li><li>Quick View and the popup cart open above the panel.</li></ul>
 <h3 id="other-useful-header-settings">Other useful header settings</h3>
@@ -478,13 +478,11 @@ stat:Weight:198 g</code></pre>
 <p>One purchase = one Shopify store. You may customize the theme freely for that store. You may not resell, share or redistribute the theme files.</p>
 <h3 id="refunds">Refunds</h3>
 <p>This is an instant digital download, so sales are final. If a file is broken or will not install and we cannot fix it, we will refund you.</p>
-<h3 id="install-service">Install service</h3>
-<p>A paid install on one store is offered as a <strong>separate</strong> Etsy listing for $149. The theme purchase does not include installation.</p>
 </section><section class="docs-section" aria-labelledby="16-troubleshooting"><p class="docs-kicker label">16</p><h2 id="16-troubleshooting">Troubleshooting</h2>
 <p><strong>The Shop by Activity grid is 2 columns, not 4.</strong><br>A tile only counts when it has a <strong>Collection</strong> or a <strong>Link</strong>. Create the missing collections, pick them on the Recover and Studio tiles (or your equivalent), and save. See <a href="#8-shop-by-activity-tiles-and-collections">section 8</a>.</p>
 <p><strong>Spec bars or stats do not show.</strong><br>Check the tag has exactly two colons (<code>spec:Cushion:4</code>, not <code>spec:Cushion 4</code>). Scores must be a number. Stat values cannot contain a colon. If <code>custom.pace_specs</code> is set and has any bars or stats, tags are ignored. On the homepage, confirm <strong>PACE spec sheet</strong> has a <strong>Product</strong> picked and <strong>Use the product&#x27;s specs</strong> is on.</p>
 <p><strong>The size guide link is missing.</strong><br>The link only shows when there is guide content. For footwear, set <strong>Footwear guide text</strong> or a <strong>Footwear size guide page</strong>, or tag the product <code>footwear</code> / set its product type to one of the types in the list. For apparel, pick a <strong>Size guide page</strong> on the <strong>Main product</strong> section. A <code>custom.size_guide</code> metafield, if used, must reference a page that has content.</p>
-<p><strong>Mega menu promo tiles do not appear.</strong><br><strong>Menu item title</strong> must match the top-level navigation title (for example <code>Shop</code>). Up to two tiles per item are used. On desktop (1024 px and wider) they appear in the mega panel; on smaller screens they appear in the mobile drawer when that menu item is expanded.</p>
+<p><strong>Mega menu promo tiles do not appear.</strong><br><strong>Menu item title</strong> must match the top-level navigation title (for example <code>Shop</code>). Up to two tiles per item are used. On desktop (1024 px and wider) they appear in the mega panel; on smaller screens they appear in the mobile menu when that menu item is expanded.</p>
 <p><strong>The announcement bar colours look wrong for Ember or Glacier.</strong><br>Each preset zip sets its own announcement bar colours (Ember <code>#1A1714</code> / <code>#EDE8DF</code>, Glacier <code>#0E1A2B</code> / <code>#EEF3F8</code>). If you uploaded a different zip or changed colours later, set <strong>Announcement bar background</strong> and <strong>Announcement bar text</strong> in <strong>Theme settings &gt; Colors</strong> to those values, or upload the preset zip you want.</p>
 <p><strong>The header logo still says PACE (or, on a reset block, a default brand name).</strong><br>Set <strong>Header &gt; Logo text</strong> or upload a <strong>Logo image</strong>.</p>
 <p><strong><code>/pages/faq</code> is a 404.</strong><br>Create a page and assign the <strong>faq</strong> template. The template is in the theme; the page has to exist in the store.</p>
@@ -494,7 +492,7 @@ stat:Weight:198 g</code></pre>
 <p><strong>The theme does not look like the demo after a clean install.</strong><br>That is expected until you add products, photos and collections, and pick them in the hero, activity tiles, spec sheet and product grid. The layout and colours of the preset you installed should already match. If you uploaded Volt and wanted Ember, upload the Ember zip.</p>
 <p><strong>I need a second store.</strong><br>The license is one store per purchase. Buy a second license for a second store, or contact support if you are unsure.</p>
 </section><section class="docs-section" aria-labelledby="17-appendix-section-list"><p class="docs-kicker label">17</p><h2 id="17-appendix-section-list">Appendix: section list</h2>
-<p>These are the section names as they appear when you click <strong>Add section</strong>. PACE 1.0 includes 30 addable content sections, plus the Header, Footer and the usual template sections (product, collection, cart, blog, account, search, 404, password and so on).</p>
+<p>These are the section names as they appear when you click <strong>Add section</strong>. PACE 1.0.3 includes 30 addable content sections, plus the Header, Footer and the usual template sections (product, collection, cart, blog, account, search, 404, password and so on).</p>
 <p><strong>PACE sections</strong></p>
 <ul><li>PACE hero</li><li>PACE marquee</li><li>PACE activity tiles</li><li>PACE spec sheet</li><li>PACE product grid</li><li>PACE drop</li><li>PACE club</li><li>PACE perks</li><li>PACE wordmark</li><li>PACE product specs (product templates only)</li></ul>
 <p><strong>General sections</strong></p>
