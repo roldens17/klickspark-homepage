@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PACE Theme Docs — KlickSpark Studio</title>
-  <meta name="description" content="Buyer guide for the PACE 1.0.1 Shopify theme: install, presets, mega menu, spec tags, size guide, drop countdown and the popup cart.">
+  <meta name="description" content="Buyer guide for the PACE 1.0.3 Shopify theme: install, presets, mega menu, spec tags, size guide, drop countdown and the popup cart.">
   <link rel="canonical" href="https://klicksparkmedia.com/pace-docs.html">
   <meta name="theme-color" content="#000000">
 
   <meta property="og:type" content="article">
   <meta property="og:site_name" content="KlickSpark Studio">
   <meta property="og:title" content="PACE Theme Docs — KlickSpark Studio">
-  <meta property="og:description" content="Buyer guide for the PACE 1.0.1 Shopify theme: install, presets, mega menu, spec tags and the popup cart.">
+  <meta property="og:description" content="Buyer guide for the PACE 1.0.3 Shopify theme: install, presets, mega menu, spec tags and the popup cart.">
   <meta property="og:url" content="https://klicksparkmedia.com/pace-docs.html">
   <meta name="twitter:card" content="summary">
 
@@ -247,11 +247,11 @@
     <section class="docs-hero on-dark" aria-labelledby="docs-title">
       <div class="wrap">
         <p class="docs-hero__crumbs label"><a href="index.html#themes">Themes</a> / <a href="pace.html">PACE</a></p>
-        <p class="docs-hero__kicker label">PACE 1.0.1 buyer guide</p>
+        <p class="docs-hero__kicker label">PACE 1.0.3 buyer guide</p>
         <h1 id="docs-title" class="display h-md">PACE Theme Docs</h1>
-        <p class="lead">A Shopify Online Store 2.0 theme for run, training and athleisure brands. This guide matches the settings you will see in the PACE 1.0.1 theme editor.</p>
+        <p class="lead">A Shopify Online Store 2.0 theme for run, training and athleisure brands. This guide matches the settings you will see in the PACE 1.0.3 theme editor.</p>
         <ul class="docs-hero__meta label">
-          <li>Version 1.0.1</li>
+          <li>Version 1.0.3</li>
           <li>Author KlickSpark</li>
           <li>Support <a href="mailto:klicksparkstudio@gmail.com">klicksparkstudio@gmail.com</a></li>
         </ul>
@@ -336,10 +336,11 @@
 <p>See <a href="#10-drop-countdown">section 10</a>.</p>
 <h3 id="pace-club">PACE club</h3>
 <p>A large image plus two small images, with a short invitation.</p>
-<ul><li><strong>Large image</strong>, <strong>Small image 1</strong>, <strong>Small image 2</strong></li><li><strong>Eyebrow</strong> — default <code>The PACE club</code>.</li><li><strong>Heading</strong> — default uses two line breaks: <code>Run with us.</code> / <code>Every Saturday,</code> / <code>7 AM.</code></li><li><strong>Link label</strong> — default <code>Find a run club</code>.</li><li><strong>Link</strong></li></ul>
+<ul><li><strong>Large image</strong>, <strong>Small image 1</strong>, <strong>Small image 2</strong></li><li><strong>Eyebrow</strong> — default <code>The PACE club</code>.</li><li><strong>Heading</strong> — default uses two line breaks: <code>Run with us.</code> / <code>Every Saturday,</code> / <code>7 AM.</code></li><li><strong>Link label</strong> — default <code>Find a run club</code>.</li><li><strong>Link</strong> — the shipped homepage points to <code>/pages/run-club</code>. Create a page under <strong>Online Store &gt; Pages</strong> with the title <code>Run club</code> (Shopify gives it the handle <code>run-club</code>), for example with your meeting point, start times, pace groups and what to bring. Or pick any other page, or clear <strong>Link label</strong> to hide the button. Until that page exists, the button opens your store’s 404 page.</li></ul>
 <h3 id="pace-perks">PACE perks</h3>
 <p>Up to 4 <strong>Perk</strong> blocks.</p>
 <ul><li><strong>Title</strong> and <strong>Text</strong></li><li><strong>Use run trial from Theme settings</strong> — shows the title and text from <strong>Theme settings &gt; Run trial</strong>, and hides this perk when the run trial is off.</li></ul>
+<p>The shipped perks are <code>30-day run trial</code>, <code>Free shipping</code>, <code>Size guide</code> (<code>Size guide and fit notes next to the size selector.</code>) and <code>Back-in-stock signup</code> (<code>Sold out in your size? Leave your email and we will let you know when it is back.</code>). Edit them to match what your store really offers. The back-in-stock signup saves the shopper in <strong>Customers</strong>; it does not send an email by itself (see <a href="#12-product-page">section 12</a>).</p>
 <h3 id="pace-wordmark">PACE wordmark</h3>
 <ul><li><strong>Wordmark</strong> — default <code>PACE</code>.</li></ul>
 </section><section class="docs-section" aria-labelledby="6-mega-menu"><p class="docs-kicker label">06</p><h2 id="6-mega-menu">Mega menu</h2>
@@ -406,15 +407,15 @@ stat:Weight:198 g</code></pre>
 <p>The theme picks a guide in this order:</p>
 <ol><li>A product metafield <strong><code>custom.size_guide</code></strong> that references a page. If set, this always wins.</li><li>If the product is <strong>footwear</strong> — its product type is listed in <strong>Footwear product types</strong>, or it is tagged <code>footwear</code> / <code>Footwear</code>:</li></ol>
 <p>- the <strong>Footwear size guide page</strong>, if one is selected, otherwise</p>
-<p>- the <strong>Footwear guide title</strong> and <strong>Footwear guide text</strong> from theme settings.</p>
+<p>- the <strong>Footwear guide title</strong>, <strong>Footwear guide text</strong> and the <strong>footwear size chart</strong> from theme settings.</p>
 <ol><li>For every other product: the <strong>Size guide page</strong> selected on the <strong>Main product</strong> section.</li></ol>
 <p>The link is hidden when no guide content applies, even if <strong>Show size guide link</strong> is on.</p>
 <h3 id="theme-settings-size-guide">Theme settings &gt; Size guide</h3>
-<ul><li><strong>Footwear product types</strong> — default <code>Shoes, Footwear, Sneakers</code>. Comma-separated. Products of these types, or tagged <code>footwear</code>, use the footwear guide.</li><li><strong>Footwear size guide page</strong> — optional. Leave empty to use the footwear text below.</li><li><strong>Footwear guide title</strong> — default <code>Footwear size guide</code>.</li><li><strong>Footwear guide text</strong> — default copy explains a true-to-size fit and how to measure. Clear this (and leave the footwear page empty) to hide the size guide on footwear that do not have a metafield page.</li><li><strong>Add a between-sizes tip for footwear</strong> — default on. Adds a tip to pick the next whole size when only whole sizes are sold, or the next half size when half sizes exist, based on the product’s actual Size values.</li></ul>
+<ul><li><strong>Footwear product types</strong> — default <code>Shoes, Footwear, Sneakers</code>. Comma-separated. Products of these types, or tagged <code>footwear</code>, use the footwear guide.</li><li><strong>Footwear size guide page</strong> — optional. Leave empty to use the footwear text below.</li><li><strong>Footwear guide title</strong> — default <code>Footwear size guide</code>.</li><li><strong>Footwear guide text</strong> — default copy explains a true-to-size fit and how to measure.</li><li><strong>Show footwear size chart</strong> — default on. Adds a size chart table under the footwear guide text. The chart is not added when a <strong>Footwear size guide page</strong> or a <code>custom.size_guide</code> metafield page is used (put your own table on that page instead).</li><li><strong>Size chart caption</strong> — default <code>Men&#x27;s running-shoe sizes</code>. Shown above the table and read out by screen readers.</li><li><strong>Size chart rows</strong> — one row per line, values separated by commas. The first line holds the column headings; the first value on each other line is the row heading. The default is a standard men’s chart, US 7 to 12 in half sizes: <code>US,UK,EU,cm</code>, then <code>7,6,40,25</code>, <code>7.5,6.5,40.5,25.5</code>, <code>8,7,41,26</code> and so on up to <code>12,11,46,30</code>.</li><li>Replace the rows with your brand’s own chart if your shoes fit differently, or add columns (for example <code>Women US</code>). On phones, a wide table scrolls sideways inside the size guide.</li><li><strong>Size chart note</strong> — default <code>cm is foot length, measured from heel to longest toe.</code> Leave empty to hide it.</li><li>To hide the size guide on footwear that does not have a metafield page: clear <strong>Footwear guide text</strong>, turn off <strong>Show footwear size chart</strong> (or clear <strong>Size chart rows</strong>), and leave <strong>Footwear size guide page</strong> empty.</li><li><strong>Add a between-sizes tip for footwear</strong> — default on. Adds a tip to pick the next whole size when only whole sizes are sold, or the next half size when half sizes exist, based on the product’s actual Size values.</li></ul>
 <h3 id="main-product-section-product-page">Main product section (product page)</h3>
 <p>Under the <strong>Size guide</strong> header:</p>
 <ul><li><strong>Show size guide link</strong> — default on.</li><li><strong>Size guide page</strong> — create a page under <strong>Online Store &gt; Pages</strong> with your apparel size chart, then pick it here. This is the guide for non-footwear products. The shipped theme looks for a page with the handle <code>size-guide</code>; if that page does not exist in your store, select your own page.</li><li><strong>Show the link next to the option named</strong> — default <code>Size</code>. The link appears beside the option whose name matches this text.</li></ul>
-<p>Only list fit advice that is true for your products. The default footwear text is a starting point, not a claim about your inventory.</p>
+<p>Only list fit advice that is true for your products. The default footwear text and size chart are a starting point, not a claim about your inventory.</p>
 </section><section class="docs-section" aria-labelledby="10-drop-countdown"><p class="docs-kicker label">10</p><h2 id="10-drop-countdown">Drop countdown</h2>
 <p>The homepage uses the <strong>PACE drop</strong> section.</p>
 <h3 id="launch-time">Launch time</h3>
@@ -423,6 +424,9 @@ stat:Weight:198 g</code></pre>
 <p>The launch line is built from the date, time and label you entered. It does not convert time zones for the shopper’s location.</p>
 <h3 id="before-and-after-launch">Before and after launch</h3>
 <ul><li><strong>Eyebrow</strong>, <strong>Heading line 1</strong>, <strong>Heading line 2</strong></li><li><strong>Background image</strong> — optional. Without an image, the section uses the button colour.</li><li><strong>Image overlay</strong> — 0–90%, default 55%.</li><li><strong>After launch</strong> — <strong>Show live message</strong> (default) or <strong>Hide this section</strong>.</li><li><strong>Live message</strong> — default <code>Live now</code>.</li><li><strong>Live button label</strong> — default <code>Shop the drop</code>.</li><li><strong>Live button link</strong> — the button only shows when a link is set.</li><li><strong>Link anchor</strong> — default <code>drop</code>. Link to this section with <code>/#drop</code> (the demo header featured link uses this).</li><li><strong>Show email signup</strong> — default on. This is Shopify’s customer/newsletter form, not a third-party app.</li><li><strong>Email placeholder</strong>, <strong>Button label</strong>, <strong>Success message</strong></li></ul>
+<h3 id="texts-that-do-not-change-after-the-drop">Texts that do not change after the drop</h3>
+<p>The countdown and the early-access signup switch off by themselves at launch. The texts below do <strong>not</strong>. They keep saying Session 04 / Dec 12 until you edit them, so update or clear them after the drop (or when you set up your own launch):</p>
+<div class="docs-table-wrap" tabindex="0"><table><thead><tr><th>Text in the demo</th><th>What it is</th><th>Where to edit it</th></tr></thead><tbody><tr><td><code>SESSION 04 · DEC 12</code> (header, under the logo bar)</td><td>Header kicker</td><td><strong>Online Store &gt; Themes &gt; Customize &gt; Header</strong> (header group) <strong>&gt; Secondary header text</strong>. Clear it to hide it.</td></tr><tr><td><code>See Session 04</code> → <code>/#drop</code> (header and mobile menu)</td><td>Featured link</td><td>Same <strong>Header</strong> section: <strong>Featured link label</strong> and <strong>Featured link</strong>. The link hides when either is empty.</td></tr><tr><td><code>Session 04 / Winter run</code> (top of the homepage hero)</td><td>Hero eyebrow</td><td><strong>Customize &gt; Home page &gt; PACE hero &gt; Eyebrow</strong>.</td></tr><tr><td><code>Session 04</code> (header menu, mobile menu and the footer Shop column)</td><td>Menu item in your main menu</td><td><strong>Online Store &gt; Navigation &gt; Main menu</strong>: rename, re-link or delete the <code>Session 04</code> item. The footer Shop column uses the same menu, so one edit fixes both. This is store navigation, not a theme setting.</td></tr></tbody></table></div><p>Optional: the <strong>PACE drop</strong> section’s <strong>Heading line 1</strong> / <strong>Heading line 2</strong> (<code>Session 04:</code> / <code>Night miles</code>) stay as they are when the section shows the live message. Change them for your next drop, or set <strong>After launch</strong> to <strong>Hide this section</strong>.</p>
 <h3 id="another-countdown-section">Another countdown section</h3>
 <p>The theme also includes a section named <strong>Drop countdown</strong> (an older layout, with a time-zone dropdown and separate before/after button labels). The homepage uses <strong>PACE drop</strong>. You can add <strong>Drop countdown</strong> to other pages if you prefer that layout. Do not put both on the same page unless you mean to show two timers.</p>
 </section><section class="docs-section" aria-labelledby="11-popup-cart-quick-view-and-search"><p class="docs-kicker label">11</p><h2 id="11-popup-cart-quick-view-and-search">Popup cart, Quick View and search</h2>
@@ -444,6 +448,7 @@ stat:Weight:198 g</code></pre>
 <p>Blocks you can add on <strong>Main product</strong>:</p>
 <ul><li>App blocks</li><li><strong>Collapsible info tab</strong> — <strong>Heading</strong>, <strong>Content</strong>, <strong>Open by default</strong></li><li><strong>Custom Liquid</strong></li></ul>
 <p>Sold-out variants are still shown and cannot be added to the cart. The back-in-stock form appears when that setting is on.</p>
+<p><strong>New in 1.0.3:</strong> sold-out sizes can now be selected. They stay crossed out, and choosing one shows <strong>Sold out</strong> on the add to cart button and shows the back-in-stock form. Choosing an available size switches back.</p>
 </section><section class="docs-section" aria-labelledby="13-faq-page"><p class="docs-kicker label">13</p><h2 id="13-faq-page">FAQ page</h2>
 <p>PACE includes a product-page-style <strong>FAQ</strong> section and a page template that already has it.</p>
 <p>To publish an FAQ page:</p>
@@ -460,10 +465,11 @@ stat:Weight:198 g</code></pre>
 <p>Blocks (up to 6):</p>
 <ul><li><strong>Menu column</strong> — <strong>Heading</strong> and <strong>Menu</strong></li><li><strong>Help &amp; policies</strong> — <strong>Heading</strong>, <strong>Text</strong>, optional <strong>Menu</strong>, and <strong>Show store policy links</strong> (lists every policy you have filled in under <strong>Settings &gt; Policies</strong>)</li><li><strong>Newsletter</strong> — <strong>Heading</strong>, <strong>Description</strong>, <strong>Email placeholder</strong>, <strong>Button label</strong></li><li><strong>Social</strong> — <strong>Heading</strong> and <strong>Description</strong>. Icons come from <strong>Theme settings &gt; Social links</strong>. The column is hidden when no social links are set.</li><li><strong>Text</strong> — <strong>Heading</strong> and <strong>Body</strong></li></ul>
 <p>The shipped footer uses four columns: Shop, Help, Stay connected and Newsletter, with payment icons on.</p>
+<p><strong>Add Contact to the Help column.</strong> The Help column’s menu is your store’s <strong>Footer</strong> menu. Go to <strong>Online Store &gt; Navigation &gt; Footer menu &gt; Add menu item</strong>, name it <code>Contact</code>, link it to your Contact page (<code>/pages/contact</code>) and save. Shopify’s policy pages are added after your menu links when <strong>Show store policy links</strong> is on. Do not edit the theme code for this.</p>
 </section><section class="docs-section" aria-labelledby="15-support-updates-and-license"><p class="docs-kicker label">15</p><h2 id="15-support-updates-and-license">Support, updates and license</h2>
 <h3 id="support">Support</h3>
 <p>Questions about the theme: email <strong>klicksparkstudio@gmail.com</strong> or message us on Etsy. We reply within 2 business days.</p>
-<p>Include your Shopify store URL, the PACE version (this is 1.0.1; you can also see it under the theme’s <strong>Theme info</strong> in the editor), and a screenshot or screen recording of the issue.</p>
+<p>Include your Shopify store URL, the PACE version (this is 1.0.3; you can also see it under the theme’s <strong>Theme info</strong> in the editor), and a screenshot or screen recording of the issue.</p>
 <p>Theme features in this guide do not require a paid app. If something needs an app (a real wishlist, a reviews platform), that app’s billing is separate.</p>
 <h3 id="updates">Updates</h3>
 <p>Bug-fix updates for PACE 1.x are free. When a new version ships, the Etsy download file is replaced and you can re-download it from your Purchases page.</p>
@@ -496,10 +502,10 @@ stat:Weight:198 g</code></pre>
 <p>Some general section files still use older internal file names. In the editor they show the labels above. They are part of PACE and are safe to use.</p>
 <p><strong>Optional metafields</strong> (create these in <strong>Settings &gt; Custom data</strong> only if you need the override):</p>
 <ul><li><code>custom.pace_specs</code> — JSON, on products. Overrides spec and stat tags when it contains bars or stats.</li><li><code>custom.size_guide</code> — page reference, on products. Overrides the automatic size guide.</li></ul>
-<p>© KlickSpark. PACE 1.0.1. One purchase, one store. This guide is included with the theme.</p>
+<p>© KlickSpark. PACE 1.0.3. One purchase, one store. This guide is included with the theme.</p>
 </section>
 
-        <p class="docs-end">© KlickSpark. PACE 1.0.1. One purchase, one store. This guide is included with the theme.</p>
+        <p class="docs-end">© KlickSpark. PACE 1.0.3. One purchase, one store. This guide is included with the theme.</p>
       </article>
     </div>
   </main>
